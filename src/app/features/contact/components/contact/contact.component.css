@@ -1,0 +1,183 @@
+/* Overall Background */
+.contact-wrapper {
+  background: linear-gradient(135deg, #f0efee, #b3d1ec);
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Two-column card layout */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+/* ===== Left Side (Info) ===== */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  background: linear-gradient(135deg, #416570, #7ac1e2);
+  color: #fff;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.contact-info li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.contact-info img {
+  max-width: 250px;
+  align-self: center;
+  border-radius: 10px;
+  margin-top: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Right Side (Form) ===== */
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  padding: 3rem 2rem;
+}
+
+.contact-form h3 {
+  color: #b8860b;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: #222;
+  font-weight: 600;
+}
+.section-title span {
+  color: #b8860b;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #124899;
+  box-shadow: 0 0 0 3px rgba(160, 61, 114, 0.15);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
+button {
+  background: linear-gradient(135deg, #416570, #7ac1e2);
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+button:hover {
+  background: green;
+}
+
+button:disabled {
+  background: linear-gradient(135deg, #416570, #7ac1e2);
+  cursor: not-allowed;
+}
+
+/* CTA Button */
+.cta-area {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #416570, #7ac1e2);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: black;
+  color: white;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-info,
+  .contact-form {
+    padding: 2rem;
+  }
+  .contact-info img {
+    margin-top: 2rem;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-form h3 {
+    font-size: 1.4rem;
+  }
+  .contact-info h2 {
+    font-size: 1.6rem;
+  }
+}

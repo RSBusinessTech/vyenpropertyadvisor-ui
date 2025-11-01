@@ -1,0 +1,102 @@
+<!-- ✅ Hero Video Section -->
+  <section class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="assets/videos/kl-skyline.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>Find Your Dream Property in Kuala Lumpur</h1>
+      <p>Buy · Rent · Invest — Trusted by Malaysians & Expats</p>
+      <div class="search-bar">
+        <input placeholder="Search area or property (e.g. KLCC)" />
+        <select>
+          <option>Buy (买)</option>
+          <option>Rent (租)</option>
+          <option>New Projects (新项目)</option>
+        </select>
+        <button>Search</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ✅ Featured Properties Carousel -->
+  <section class="featured">
+    <h2>Featured Properties in Kuala Lumpur</h2>
+    <div class="carousel">
+      <div class="card" *ngFor="let item of [1,2,3,4,5]">
+        <img src="assets/images/property1.png" alt="Property {{item}}">
+        <div class="card-content">
+          <h3>Luxury Condo {{item}}</h3>
+          <p>Located in the heart of KL City — from RM {{item*2000}}/month</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ✅ Video Gallery -->
+  <section class="video-gallery">
+    <h2>Explore Our Properties on Video</h2>
+    <div class="video-grid">
+        <iframe 
+        src="https://www.youtube.com/embed/xeYoAEYxffg" 
+        title="Kuala Lumpur Stunning Skylines" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      
+      <iframe 
+        src="https://www.youtube.com/embed/EsHb3oqIfpE" 
+        title="Kuala Lumpur Drone Video 2024" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      
+      <iframe 
+        src="https://www.youtube.com/embed/y7QaIz66Bjk" 
+        title="Downtown Kuala Lumpur Aerial Footage" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      
+    </div>
+  </section>
+  
+  <!-- ✅ Why Choose Us -->
+<section class="why-us">
+    <h2 class="section-title">Why Choose <span>Vyen Property</span>?</h2>
+    <p class="section-subtitle">
+      Trusted by hundreds of property buyers and renters across Malaysia.
+    </p>
+  
+    <div class="reasons">
+      <div class="reason-card">
+        <div class="icon">🏢</div>
+        <h3>Licensed Advisors</h3>
+        <p>Work with certified and experienced property professionals.</p>
+      </div>
+  
+      <div class="reason-card">
+        <div class="icon">📜</div>
+        <h3>Verified Listings</h3>
+        <p>Every listing is screened and validated for authenticity.</p>
+      </div>
+  
+      <div class="reason-card">
+        <div class="icon">🌏</div>
+        <h3>English / 中文 Support</h3>
+        <p>Serving both local and international clients seamlessly.</p>
+      </div>
+  
+      <div class="reason-card">
+        <div class="icon">🏙️</div>
+        <h3>KL & Selangor Expertise</h3>
+        <p>Deep knowledge of the Kuala Lumpur & Selangor property markets.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  

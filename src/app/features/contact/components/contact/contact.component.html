@@ -1,0 +1,45 @@
+<section class="contact-wrapper">
+  <div class="contact-container">
+
+    <!-- LEFT SIDE: Brand Info / Image -->
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <p>
+        We'd love to connect! Whether you have questions, feedback, or would like
+        to book an appointment, we’re here to help.
+      </p>
+      <ul>
+        <li><strong>Address:</strong> 1 Elizabeth St, Melbourne, VIC 3000</li>
+        <li><strong>Phone:</strong> +61 411 158 881</li>
+        <li><strong>Email:</strong> info@lashmapbeauty.com</li>
+      </ul>
+      <img src="assets/images/property1.png" alt="Lash Map Beauty Studio" />
+    </div>
+
+    <!-- RIGHT SIDE: Contact Form -->
+    <div class="contact-form">
+      <h2 class="section-title">Send us a  <span>message</span></h2>
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input formControlName="name" type="text" placeholder="Your Name" />
+        </div>
+
+        <div class="form-group">
+          <input formControlName="email" type="email" placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <textarea formControlName="message" placeholder="Write your message..."></textarea>
+        </div>
+
+        <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="cta-area">
+    <a class="btn-primary" (click)="goBack()">← Go Back</a>
+  </div>
+</section>
