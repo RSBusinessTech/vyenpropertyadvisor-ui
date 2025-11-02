@@ -217,6 +217,27 @@
     text-decoration: underline;
     color: red; /* Add this */
   }
+
+  .developer-credit {
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  margin-top: 20px;
+}
+
+.developer-credit a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.developer-credit a:hover {
+  color: red;
+}
+
+.developer-credit .credit-link {
+  text-decoration: underline;
+}
   
   
   
