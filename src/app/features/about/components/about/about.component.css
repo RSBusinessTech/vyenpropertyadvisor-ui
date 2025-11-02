@@ -108,7 +108,7 @@ h2 span {
   color: #000;
   text-align: center;
   padding-bottom: 100px;
-  clip-path: polygon(0 3%, 100% 7%, 100% 95%, 0 100%);
+  clip-path: polygon(0 3%, 100% 5%, 100% 95%, 0 100%);
 }
 
 .location-city {
@@ -167,6 +167,71 @@ h2 span {
 }
 .btn-primary:hover {
     background: black;
+}
+
+/* Headings and info */
+.location-heading {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: bounceIn 5s ease-in-out 0.2s infinite;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.staff-heading {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  animation: fadeIn 5s ease-in-out 0.2s infinite; /* delay of 0.5s with frequency of 5sec */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-heading {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  text-align: left;
+  animation: slideInLeft 5s ease-in-out 0.1s infinite; /* delay of 0.5s with frequency of 5sec */
+}
+
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* -------------------- RESPONSIVE -------------------- */
