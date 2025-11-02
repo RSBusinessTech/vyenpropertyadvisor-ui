@@ -60,7 +60,7 @@ h2 span {
 
 /* -------------------- TEAM SECTION -------------------- */
 .team-realestate {
-  background: #f0efee;
+  background: linear-gradient(180deg, #84b1c5 0%, #b3d1ec 100%);
   clip-path: polygon(0 7%, 100% 0%, 100% 100%, 0% 100%);
   padding-top: 120px;
   padding-bottom: 80px;
