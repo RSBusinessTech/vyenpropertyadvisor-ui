@@ -19,7 +19,6 @@ h2 span {
 /* -------------------- ABOUT SECTION -------------------- */
 .about-realestate {
   background: linear-gradient(180deg, #84b1c5 0%, #b3d1ec 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   color: #000;
 }
 
@@ -61,8 +60,7 @@ h2 span {
 /* -------------------- TEAM SECTION -------------------- */
 .team-realestate {
   background: linear-gradient(180deg, #84b1c5 0%, #b3d1ec 100%);
-  clip-path: polygon(0 7%, 100% 0%, 100% 100%, 0% 100%);
-  padding-top: 120px;
+  padding-top: 30px;
   padding-bottom: 80px;
   text-align: center;
 }
@@ -105,10 +103,10 @@ h2 span {
 /* -------------------- LOCATION SECTION -------------------- */
 .location-realestate {
   background: #84b1c5;
+  padding-top: 30px;
   color: #000;
   text-align: center;
   padding-bottom: 100px;
-  clip-path: polygon(0 3%, 100% 5%, 100% 95%, 0 100%);
 }
 
 .location-city {
@@ -150,9 +148,8 @@ h2 span {
 
 /* -------------------- CTA SECTION -------------------- */
 .cta-realestate {
-  /* background: linear-gradient(135deg, #b3d1ec, #84b1c5); */
   text-align: center;
-  padding: 60px 20px;
+  padding: 20px 20px;
 }
 
 .btn-primary {
