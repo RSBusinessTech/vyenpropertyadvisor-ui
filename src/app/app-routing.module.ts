@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
   { path: 'about', loadChildren: () => import('./features/about/about.module').then(m => m.AboutModule) },
-  // { path: 'products', loadChildren: () => import('./features/products/products.module').then(m => m.ProductsModule) },
+  { path: 'rent', loadChildren: () => import('./features/rent/rent.module').then(m => m.RentModule) },
   // { path: 'services', loadChildren: () => import('./features/services/services.module').then(m => m.ServicesModule) },
   { path: 'contact', loadChildren: () => import('./features/contact/contact.module').then(m => m.ContactModule) }
 ];
