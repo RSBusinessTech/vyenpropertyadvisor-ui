@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
@@ -9,6 +9,18 @@ import { Title, Meta } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
   constructor(private title: Title, private meta: Meta) { }
+
+  //Start: Enabling video to play automatically, by default it will be disabled by browser.
+  @ViewChild('heroVideo', { static: false }) heroVideo!: ElementRef<HTMLVideoElement>;  
+
+    ngAfterViewInit() {
+    const video = this.heroVideo.nativeElement;
+    video.muted = true;   // ensure muted property is set programmatically
+    video.play().catch(error => {
+      console.warn('Video play was prevented:', error);
+    });
+  }
+  //End: Enabling video to play automatically, by default it will be disabled by browser.
 
   ngOnInit(): void {
     // ✅ SEO optimization
