@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: 'about', loadChildren: () => import('./features/about/about.module').then(m => m.AboutModule) },
   { path: 'rent', loadChildren: () => import('./features/rent/rent.module').then(m => m.RentModule) },
-  // { path: 'services', loadChildren: () => import('./features/services/services.module').then(m => m.ServicesModule) },
+  { path: 'mm2h', loadChildren: () => import('./features/mm2h/mm2h.module').then(m => m.Mm2hModule) },
   { path: 'contact', loadChildren: () => import('./features/contact/contact.module').then(m => m.ContactModule) }
 ];
 
