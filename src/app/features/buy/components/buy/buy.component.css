@@ -1,152 +1,115 @@
-/* === Rent Hero Section === */
-.rent-hero {
-  position: relative;
+/* === Buy Hero Section === */
+.buy-hero {
   height: 75vh;
-  background: url('/assets/images/kl-rent-bg.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  text-align: center;
+  background: linear-gradient(135deg, #f0efee, #b3d1ec);
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px; /* small horizontal padding on smallest screens */
 }
 
-.rent-hero-text {
-  text-align: center;
-  color: white;
-}
-
-.rent-hero-text h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
+.buy-hero-container {
   display: flex;
-  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+  flex-wrap: wrap-reverse;
+  align-items: center;
   justify-content: center;
 }
 
-.rent-hero-text h1 span {
+.buy-hero-text {
+  flex: 1 1 500px;
+  color: #333;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  min-width: 280px;
+}
+
+.buy-hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.buy-hero-text h1 span {
+  color: #b8860b;
   display: inline-block;
   opacity: 0;
   transform: translateY(20px);
-  margin-right: 10px; /* ✅ Adds space after each word */
-  animation: wordFade 0.6s ease-out forwards;
+  animation: fadeUp 0.6s ease-out forwards;
 }
 
-/* ✅ Animate words one by one */
-.rent-hero-text h1 span:nth-child(1) { animation-delay: 0s; }
-.rent-hero-text h1 span:nth-child(2) { animation-delay: 0.2s; }
-.rent-hero-text h1 span:nth-child(3) { animation-delay: 0.4s; }
-.rent-hero-text h1 span:nth-child(4) { animation-delay: 0.6s; }
-.rent-hero-text h1 span:nth-child(5) { animation-delay: 0.8s; }
+.buy-hero-text h1 span:nth-child(1) { animation-delay: 0s; }
+.buy-hero-text h1 span:nth-child(2) { animation-delay: 0.2s; }
+.buy-hero-text h1 span:nth-child(3) { animation-delay: 0.4s; }
 
-@keyframes wordFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* ✅ Optional: responsive scaling */
-@media (max-width: 768px) {
-  .rent-hero-text h1 {
-    font-size: 1.8rem;
-  }
-}
-
-
-.rent-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
-
-.rent-hero-text {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-}
-
-.rent-hero-text h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
-.rent-hero-text p {
+.buy-hero-text p {
   font-size: 1.1rem;
   margin-bottom: 25px;
+  color: #555;
 }
 
-.rent-search {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+.hero-cta {
+  display: inline-block;
+  background-color: #b8860b;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Ensure consistent box sizing */
-.rent-search input,
-.rent-search select,
-.rent-search button {
-  box-sizing: border-box;
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
+.hero-cta:hover {
+  background-color: #9e760b;
+  transform: translateY(-2px);
 }
 
-/* Desktop view */
-.rent-search input,
-.rent-search select {
-  width: 230px;
+.buy-hero-image {
+  flex: 1 1 500px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  min-width: 280px;
 }
 
-.rent-search button {
-  background: #b8860b;
-  color: white;
-  padding: 10px 25px;
-  cursor: pointer;
-}
-.rent-search button:hover {
-  background: #9e760b;
+.buy-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px;
 }
 
-/* ✅ Mobile view fix */
-@media (max-width: 768px) {
-  .rent-search {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .rent-search input,
-  .rent-search select,
-  .rent-search button {
-    width: 90%;
-    max-width: 400px;
-    padding: 12px;               /* uniform height */
-    border: none;
-  }
-
-  .rent-search input,
-  .rent-search select {
-    border: 1px solid #ccc;      /* optional: subtle border for clarity */
-  }
-
-  .rent-search button {
-    background-color: #b8860b;
-    color: #fff;
-    border: none;
-  }
+.buy-hero-image .image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  border-radius: 15px;
+  pointer-events: none;
 }
 
-/* === Featured Rentals === */
+/* === Featured Rentals Section === */
 .featured-rentals {
   padding: 70px 8%;
   text-align: center;
   background: #fffdf5;
+}
+
+.featured-rentals h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
 }
 
 .rent-grid {
@@ -163,17 +126,34 @@
   overflow: hidden;
   transition: transform 0.3s;
 }
+
 .rent-card:hover {
   transform: translateY(-5px);
 }
+
 .rent-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  display: block;
 }
+
 .rent-card-info {
   padding: 15px;
+  text-align: left;
 }
+
+.rent-card-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+}
+
+.rent-card-info p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
 .details-btn {
   background: #b8860b;
   color: white;
@@ -182,111 +162,82 @@
   border-radius: 5px;
   margin-top: 10px;
   cursor: pointer;
+  transition: background 0.3s;
 }
+
 .details-btn:hover {
   background: #9e760b;
 }
 
-/* === Why Rent Section === */
+/* === Why Rent With Us Section === */
 .why-rent {
   padding: 80px 10%;
   text-align: center;
   background: linear-gradient(135deg, #f1f4f8, #d9e9f7);
 }
+
 .why-rent h2 {
   font-size: 2rem;
   margin-bottom: 40px;
 }
+
 .why-rent span {
   color: #b8860b;
 }
+
 .reasons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
+  justify-items: center;
 }
+
 .reason {
   background: #fff;
   border-radius: 12px;
   padding: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  max-width: 280px;
+  text-align: center;
 }
+
 .reason .icon {
   font-size: 2.5rem;
   color: #b8860b;
   margin-bottom: 10px;
 }
 
+.reason h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.reason p {
+  color: #555;
+  font-size: 1rem;
+  margin: 0;
+}
+
 /* === CTA Section === */
-.rent-cta {
-  background: #000;
-  color: white;
-  padding: 70px 10%;
-  text-align: center;
-}
-.rent-cta button {
-  background: #b8860b;
-  color: #fff;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-.rent-cta button:hover {
-  background: #9e760b;
-}
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .rent-hero-text h1 {
-    font-size: 2rem;
-  }
-  .rent-search {
-    flex-direction: column;
-    align-items: center;
-  }
-  .rent-search input,
-  .rent-search select,
-  .rent-search button {
-    width: 90%;
-  }
-}
-
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .rent-hero-text h1 {
-    font-size: 2rem;
-  }
-  .rent-search {
-    flex-direction: column;
-    align-items: center;
-  }
-  .rent-search input,
-  .rent-search select,
-  .rent-search button {
-    width: 90%;
-  }
-}
-
-/* CTA Section */
 .cta-section {
   text-align: center;
   background: #fffdf5;
   color: #000;
   padding: 40px 20px;
   border-radius: 12px;
+  margin: 40px 8%;
 }
 
 .cta-section h2 {
   font-size: 26px;
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .cta-section p {
   font-size: 18px;
   margin-bottom: 20px;
+  color: #444;
 }
 
 .cta-button {
@@ -297,9 +248,211 @@
   text-decoration: none;
   font-weight: 600;
   transition: background 0.3s ease;
+  display: inline-block;
 }
 
 .cta-button:hover {
   background-color: #000;
 }
 
+/* === Responsive === */
+
+/* Small devices (phones, 320px and up) */
+@media (max-width: 480px) {
+  .buy-hero {
+    height: auto; /* let height expand */
+    padding: 40px 15px;
+  }
+
+  .buy-hero-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .buy-hero-text {
+    text-align: center;
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .buy-hero-text h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .buy-hero-text p {
+    font-size: 1rem;
+  }
+
+  .buy-hero-image {
+    flex: 1 1 100%;
+    min-width: auto;
+    max-height: 300px;
+  }
+
+  .buy-hero-image img {
+    height: 100%;
+  }
+
+  .hero-cta {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .featured-rentals {
+    padding: 50px 5%;
+  }
+
+  .featured-rentals h2 {
+    font-size: 1.6rem;
+  }
+
+  .rent-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .rent-card img {
+    height: 180px;
+  }
+
+  .rent-card-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .rent-card-info p {
+    font-size: 0.9rem;
+  }
+
+  .details-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .why-rent {
+    padding: 50px 5%;
+  }
+
+  .why-rent h2 {
+    font-size: 1.6rem;
+  }
+
+  .reason {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .reason h3 {
+    font-size: 1.1rem;
+  }
+
+  .reason p {
+    font-size: 0.9rem;
+  }
+
+  .cta-section {
+    padding: 30px 15px;
+    margin: 30px 5%;
+  }
+
+  .cta-section h2 {
+    font-size: 22px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (tablets, 481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .buy-hero {
+    height: auto;
+    padding: 50px 30px;
+  }
+
+  .buy-hero-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .buy-hero-text {
+    text-align: center;
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .buy-hero-text h1 {
+    font-size: 2.2rem;
+    line-height: 1.25;
+  }
+
+  .buy-hero-text p {
+    font-size: 1.05rem;
+  }
+
+  .buy-hero-image {
+    flex: 1 1 100%;
+    max-height: 350px;
+  }
+
+  .rent-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .rent-card img {
+    height: 180px;
+  }
+
+  .featured-rentals h2,
+  .why-rent h2 {
+    font-size: 1.8rem;
+  }
+
+  .details-btn {
+    padding: 8px 14px;
+  }
+
+  .reason {
+    max-width: 90%;
+  }
+
+  .cta-section {
+    padding: 35px 30px;
+    margin: 35px 10%;
+  }
+
+  .cta-section h2 {
+    font-size: 24px;
+  }
+
+  .cta-section p {
+    font-size: 17px;
+  }
+
+  .cta-button {
+    padding: 11px 22px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Large devices (desktops and up, 769px and above) */
+@media (min-width: 769px) {
+  /* Keep your original styles, maybe minor tweaks */
+  .buy-hero-text h1 {
+    font-size: 2.8rem;
+  }
+  .buy-hero-text p {
+    font-size: 1.1rem;
+  }
+  .hero-cta {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+}
