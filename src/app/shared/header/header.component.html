@@ -5,14 +5,21 @@
       </a>
   
       <nav class="nav-links" [class.mobile-menu-open]="menuOpen">
-        <a routerLink="/">Home<br>(首页)</a>
-        <a routerLink="/about">About us<br>(关于我们)</a>
-        <a routerLink="/rent">Rent<br>(租)</a>
-        <a routerLink="/buy">Buy<br>(买)</a>
+        <a routerLink="/">Home<br><small>(首页)</small></a>
+        <a routerLink="/about">About us<br><small>(关于我们)</small></a>
+        <a routerLink="/rent">Rent<br><small>(租)</small></a>
+        <a routerLink="/buy">Buy<br><small>(买)</small></a>
         <a routerLink="/commercial">Commercial<br>(商业)</a>
-        <a routerLink="/mm2h">MM2H<br>(马来西亚我的第二家园计划)</a>
-        <a routerLink="/newProjects">New Projects<br>(新项目)</a>
-        <a routerLink="/contact">Contact us<br>(联系我们)</a>
+        <a routerLink="/mm2h">MM2H<br><small>(马来西亚我的第二家园计划)</small></a>
+        <a routerLink="/newProjects">New Projects<br><small>(新项目)</small></a>
+        <a routerLink="/contact">Contact us<br><small>(联系我们)</small></a>
+
+        <a href="https://rsbusinesstech.com/onlineAppointmentBookingSystem/login" class="admin-login">
+          <i class="fa-solid fa-user-shield"></i> 
+            🔐 Agent<br>
+          <small>(代理登录)</small>
+        </a>
+
       </nav>
   
       <button class="menu-toggle" (click)="menuOpen = !menuOpen">
