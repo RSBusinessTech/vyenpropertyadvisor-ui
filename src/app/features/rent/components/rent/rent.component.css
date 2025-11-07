@@ -2,7 +2,7 @@
 .rent-hero {
   position: relative;
   height: 75vh;
-  background: url('/assets/images/kl-rent-bg.jpg') center/cover no-repeat;
+  background: url('/assets/images/kl-rent-bg.webp') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

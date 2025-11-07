@@ -2,7 +2,7 @@
 .rent-hero {
   position: relative;
   height: 75vh;
-  background: url('/assets/images/commercial-hero.jpg') center/cover no-repeat;
+  background: url('/assets/images/commercial-hero.webp') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
