@@ -1,38 +1,59 @@
+/* === Global Fixes === */
+html, body {
+  width: 100%;
+  min-width: 320px; /* ✅ Prevent page from shrinking too much on mobile */
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
 /* === Rent Hero Section === */
 .rent-hero {
   position: relative;
   height: 75vh;
+  min-height: 500px; /* ✅ Prevents collapse on zoom-out */
   background: url('/assets/images/kl-rent-bg.webp') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   text-align: center;
-  min-height: 500px; /* ✅ ensures a minimum visible height */
+}
+
+.rent-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .rent-hero-text {
-  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
   color: white;
+  text-align: center;
 }
 
 .rent-hero-text h1 {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 700;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .rent-hero-text h1 span {
   display: inline-block;
   opacity: 0;
   transform: translateY(20px);
-  margin-right: 10px; /* ✅ Adds space after each word */
+  margin-right: 10px;
   animation: wordFade 0.6s ease-out forwards;
 }
 
-/* ✅ Animate words one by one */
 .rent-hero-text h1 span:nth-child(1) { animation-delay: 0s; }
 .rent-hero-text h1 span:nth-child(2) { animation-delay: 0.2s; }
 .rent-hero-text h1 span:nth-child(3) { animation-delay: 0.4s; }
@@ -50,36 +71,12 @@
   }
 }
 
-/* ✅ Optional: responsive scaling */
-@media (max-width: 768px) {
-  .rent-hero-text h1 {
-    font-size: 1.8rem;
-  }
-}
-
-
-.rent-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
-
-.rent-hero-text {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-}
-
-.rent-hero-text h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
 .rent-hero-text p {
   font-size: 1.1rem;
   margin-bottom: 25px;
 }
 
+/* === Search Bar === */
 .rent-search {
   display: flex;
   justify-content: center;
@@ -87,7 +84,6 @@
   gap: 10px;
 }
 
-/* Ensure consistent box sizing */
 .rent-search input,
 .rent-search select,
 .rent-search button {
@@ -98,7 +94,6 @@
   border: none;
 }
 
-/* Desktop view */
 .rent-search input,
 .rent-search select {
   width: 230px;
@@ -109,38 +104,11 @@
   color: white;
   padding: 10px 25px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
 }
 .rent-search button:hover {
   background: #9e760b;
-}
-
-/* ✅ Mobile view fix */
-@media (max-width: 768px) {
-  .rent-search {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .rent-search input,
-  .rent-search select,
-  .rent-search button {
-    width: 90%;
-    max-width: 400px;
-    padding: 12px;               /* uniform height */
-    border: none;
-  }
-
-  .rent-search input,
-  .rent-search select {
-    border: 1px solid #ccc;      /* optional: subtle border for clarity */
-  }
-
-  .rent-search button {
-    background-color: #b8860b;
-    color: #fff;
-    border: none;
-  }
 }
 
 /* === Featured Rentals === */
@@ -148,6 +116,7 @@
   padding: 70px 8%;
   text-align: center;
   background: #fffdf5;
+  min-height: 400px; /* ✅ ensures stable layout */
 }
 
 .rent-grid {
@@ -189,11 +158,30 @@
   background: #9e760b;
 }
 
+/* Align View Details (left) and WhatsApp (right) */
+.rent-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.whatsapp-btn img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover img {
+  transform: scale(1.1);
+}
+
 /* === Why Rent Section === */
 .why-rent {
   padding: 80px 10%;
   text-align: center;
   background: linear-gradient(135deg, #f1f4f8, #d9e9f7);
+  min-height: 400px; /* ✅ prevents it from getting too small */
 }
 .why-rent h2 {
   font-size: 2rem;
@@ -220,69 +208,11 @@
 }
 
 /* === CTA Section === */
-.rent-cta {
-  background: #000;
-  color: white;
-  padding: 70px 10%;
-  text-align: center;
-}
-.rent-cta button {
-  background: #b8860b;
-  color: #fff;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-.rent-cta button:hover {
-  background: #9e760b;
-}
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .rent-hero-text h1 {
-    font-size: 2rem;
-  }
-  .rent-search {
-    flex-direction: column;
-    align-items: center;
-  }
-  .rent-search input,
-  .rent-search select,
-  .rent-search button {
-    width: 90%;
-  }
-}
-
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .rent-hero-text h1 {
-    font-size: 2rem;
-  }
-  .rent-search {
-    flex-direction: column;
-    align-items: center;
-  }
-  .rent-search input,
-  .rent-search select,
-  .rent-search button {
-    width: 90%;
-  }
-  .rent-hero {
-    height: 70vh;
-    min-height: 400px; /* ✅ smaller min height for phones */
-  }
-}
-
-/* CTA Section */
 .cta-section {
   text-align: center;
   background: #fffdf5;
   color: #000;
-  padding: 40px 20px;
-  /* border-radius: 12px; */
+  padding: 60px 20px;
 }
 
 .cta-section h2 {
@@ -309,28 +239,32 @@
   background-color: #000;
 }
 
-
-/* Align View Details (left) and WhatsApp (right) */
-.rent-card-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-/* WhatsApp icon styling */
-.whatsapp-btn img {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-btn:hover img {
-  transform: scale(1.1);
-}
-
-/* Optional: adjust spacing for mobile */
+/* === Responsive === */
 @media (max-width: 768px) {
+  .rent-hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .rent-search {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .rent-search input,
+  .rent-search select,
+  .rent-search button {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    border: none;
+  }
+
+  .rent-search input,
+  .rent-search select {
+    border: 1px solid #ccc;
+  }
+
   .rent-card-actions {
     flex-direction: row;
     justify-content: space-between;
@@ -342,23 +276,16 @@
   }
 }
 
+/* === Marquee Heading Animation === */
 .marquee-heading {
   display: inline-block;
-  white-space: nowrap;           /* Prevent text wrapping */
-  color: red;                    /* Your red color */
+  white-space: nowrap;
+  color: red;
   font-size: 2rem;
   animation: slide-left 10s linear infinite;
 }
 
 @keyframes slide-left {
-  0% {
-    transform: translateX(100%); /* Start outside from the right */
-  }
-  100% {
-    transform: translateX(-100%); /* Move fully to the left */
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
-
-
-
-
