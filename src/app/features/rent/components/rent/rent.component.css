@@ -241,7 +241,6 @@ html, body {
 /* === Responsive === */
 @media (max-width: 768px) {
 html, body, :host {
-    width: 100%;
     overflow-x: hidden;
     display: block;
   }
