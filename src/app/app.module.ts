@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './features/home/home.component';
-import { NewProjectsComponent } from './features/newProjects/components/new-projects/new-projects.component';
+import { ViewDetailsComponent } from './features/view-details/view-details.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +14,7 @@ import { NewProjectsComponent } from './features/newProjects/components/new-proj
     HeaderComponent,
     FooterComponent,
     HomeComponent,
+    ViewDetailsComponent,
   ],
   imports: [
     BrowserModule,

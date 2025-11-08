@@ -1,0 +1,44 @@
+<section class="property-details-container">
+
+  <!-- Section 1: Image Gallery -->
+  <section class="image-gallery">
+    <div class="main-image">
+      <img [src]="selectedImage" alt="Property Image" />
+    </div>
+
+    <div class="thumbnail-list">
+      <img
+        *ngFor="let img of images"
+        [src]="img"
+        (click)="selectImage(img)"
+        [class.selected]="img === selectedImage"
+        alt="Thumbnail"
+      />
+    </div>
+  </section>
+
+  <!-- Section 2: Property Summary -->
+  <section class="property-summary">
+    <h1 class="property-name">{{property.name}}</h1>
+    <p class="property-address">{{property.address}}</p>
+    <h2 class="property-price">RM {{property.price | number}} /month</h2>
+
+    <div class="property-features">
+      <div class="feature">
+        <span class="feature-value">{{property.beds}}</span>
+        <span class="feature-label">Bedsrooms</span>
+      </div>
+      <div class="feature">
+        <span class="feature-value">{{property.baths}}</span>
+        <span class="feature-label">Bathrooms</span>
+      </div>
+      <div class="feature">
+        <span class="feature-value">{{property.sqft}}</span>
+        <span class="feature-label">sqft (floor)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- You can add more sections here without affecting the above -->
+
+</section>

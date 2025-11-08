@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
+import { ViewDetailsComponent } from './features/view-details/view-details.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'commercial', loadChildren: () => import('./features/commercial/commercial.module').then(m => m.CommercialModule) },
   { path: 'mm2h', loadChildren: () => import('./features/mm2h/mm2h.module').then(m => m.Mm2hModule) },
   { path: 'newProjects', loadChildren: () => import('./features/newProjects/newProjects.module').then(m => m.NewProjectsModule) },
-  { path: 'contact', loadChildren: () => import('./features/contact/contact.module').then(m => m.ContactModule) }
+  { path: 'contact', loadChildren: () => import('./features/contact/contact.module').then(m => m.ContactModule) },
+  { path: "viewDetails/:type/:id", component: ViewDetailsComponent },
 ];
 
 @NgModule({
