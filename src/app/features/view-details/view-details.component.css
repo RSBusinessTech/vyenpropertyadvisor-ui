@@ -206,3 +206,22 @@ html, body {
     font-size: 0.8rem;
   }
 }
+
+/* === Video Gallery === */
+.video-gallery {
+  padding: 20px 10%;
+  background: #fffdf1;
+  text-align: center;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.video-grid iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  border: none;
+}
