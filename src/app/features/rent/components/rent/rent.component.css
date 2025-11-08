@@ -1,7 +1,6 @@
 /* === Global Fixes === */
 html, body {
   width: 100%;
-  min-width: 320px; /* ✅ Prevent page from shrinking too much on mobile */
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -243,7 +242,7 @@ html, body {
 @media (max-width: 768px) {
 html, body, :host {
     width: 100%;
-    min-width: 320px; /* ✅ same as Buy page */
+    min-width: 300px; /* ✅ same as Buy page */
     overflow-x: hidden;
     display: block;
   }
