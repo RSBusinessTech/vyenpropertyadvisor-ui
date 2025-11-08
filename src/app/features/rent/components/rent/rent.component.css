@@ -8,6 +8,7 @@
   justify-content: center;
   color: #fff;
   text-align: center;
+  min-height: 500px; /* ✅ ensures a minimum visible height */
 }
 
 .rent-hero-text {
