@@ -241,6 +241,20 @@ html, body {
 
 /* === Responsive === */
 @media (max-width: 768px) {
+  :host {
+    min-width: 400px; /* ✅ Prevents mobile shrink */
+    overflow-x: hidden;
+    display: block;
+  }
+
+  .rent-hero,
+  .featured-rentals,
+  .why-rent,
+  .cta-section {
+    width: 100%;
+    min-width: 400px;
+    overflow-x: hidden;
+  }
     html, body {
     width: 100%;
     min-width: 360px; /* ✅ Prevents page from becoming too narrow */
