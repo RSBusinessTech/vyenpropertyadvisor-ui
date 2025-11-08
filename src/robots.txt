@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vyenpropertyadvisor.com/sitemap.xml
