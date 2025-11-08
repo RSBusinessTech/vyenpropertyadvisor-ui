@@ -337,5 +337,23 @@
   }
 }
 
+.marquee-heading {
+  display: inline-block;
+  white-space: nowrap;           /* Prevent text wrapping */
+  color: red;                    /* Your red color */
+  font-size: 2rem;
+  animation: slide-left 10s linear infinite;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%); /* Start outside from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move fully to the left */
+  }
+}
+
+
 
 
