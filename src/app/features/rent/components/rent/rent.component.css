@@ -270,6 +270,10 @@
   .rent-search button {
     width: 90%;
   }
+  .rent-hero {
+    height: 70vh;
+    min-height: 400px; /* ✅ smaller min height for phones */
+  }
 }
 
 /* CTA Section */
