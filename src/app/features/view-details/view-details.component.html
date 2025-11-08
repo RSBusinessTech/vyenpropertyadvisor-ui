@@ -25,20 +25,55 @@
 
     <div class="property-features">
       <div class="feature">
-        <span class="feature-value">{{property.beds}}</span>
-        <span class="feature-label">Bedsrooms</span>
+        <span class="feature-value">🛏️ {{property.beds}}</span>
+        <span class="feature-label">Bedrooms</span>
       </div>
       <div class="feature">
-        <span class="feature-value">{{property.baths}}</span>
+        <span class="feature-value">🛁 {{property.baths}}</span>
         <span class="feature-label">Bathrooms</span>
       </div>
       <div class="feature">
-        <span class="feature-value">{{property.sqft}}</span>
-        <span class="feature-label">sqft (floor)</span>
+        <span class="feature-value">🚘 {{property.carParks}}</span>
+        <span class="feature-label">Car Parkings</span>
+      </div>
+      <div class="feature">
+        <span class="feature-value">📐{{property.sqft}}</span>
+        <span class="feature-label">sq.ft.</span>
+      </div>
+      <div class="feature">
+        <span class="feature-value">🛋️ {{property.furnish}}</span>
+        <span class="feature-label">Furnished</span>
       </div>
     </div>
   </section>
 </section>
+
+<div class="contact-card">
+  <div class="profile-section">
+    <img src="assets/images/vyen.webp" alt="Agent photo" class="profile-img" />
+    <div class="profile-info">
+      <h3>Vyen</h3>
+      <p>Property Agent</p>
+    </div>
+  </div>
+
+  <button class="whatsapp-btn" (click)="openWhatsApp()">
+    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+  </button>
+
+  <div class="other-ways">
+    <button class="toggle-btn" (click)="toggleEnquiry()">
+      Other ways to enquire
+      <span [class.rotated]="showEnquiry">▼</span>
+    </button>
+
+    <div *ngIf="showEnquiry" class="enquiry-options">
+      <a href="tel:+60123456789">📞 Call</a>
+      <a href="mailto:vyenpropertyadvisor@gmail.com">✉️ Email</a>
+    </div>
+  </div>
+</div>
+
 
  <!-- ✅ Video Gallery -->
   <section class="video-gallery">
@@ -69,3 +104,34 @@
       </iframe>
     </div>
   </section>  
+
+  <section class="amenities-section">
+  <h2 class="section-title">Amenities</h2>
+
+  <div class="amenities-grid">
+    <div
+      *ngFor="let amenity of displayedAmenities"
+      class="amenity-card"
+    >
+      <span class="check-icon">✔</span>
+      <span class="amenity-name">{{ amenity }}</span>
+    </div>
+  </div>
+
+  <button
+    *ngIf="!showAll"
+    class="see-more-btn"
+    (click)="toggleAmenities()"
+  >
+    See all {{ amenities.length }} amenities
+  </button>
+
+  <button
+    *ngIf="showAll"
+    class="see-more-btn"
+    (click)="toggleAmenities()"
+  >
+    Show less
+  </button>
+</section>
+

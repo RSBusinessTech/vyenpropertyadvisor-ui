@@ -20,6 +20,8 @@ export class ViewDetailsComponent implements OnInit {
   ];
 
   selectedImage: string;
+    showAll = false;
+
 
   property = {
     name: 'Axis Crown @ Axis Pandan',
@@ -27,8 +29,27 @@ export class ViewDetailsComponent implements OnInit {
     price: 3800,
     beds: 2,
     baths: 2,
+    carParks: 2,
+    furnish: 'Fully',
     sqft: 788
   };
+
+  amenities: string[] = [
+    'Air conditioner',
+    'Balcony',
+    'Bed',
+    'Covered car parking',
+    'Refrigerator',
+    'Washing machine',
+    'Water heater',
+    'Wardrobe',
+    'Sofa set',
+    'Dining table',
+    'Microwave oven',
+    'TV unit',
+    'High-speed WiFi',
+    '24-hour security'
+  ];
 
   ngOnInit() {
     this.selectedImage = this.images[0];
@@ -36,6 +57,24 @@ export class ViewDetailsComponent implements OnInit {
 
   selectImage(img: string) {
     this.selectedImage = img;
+  }
+
+  showEnquiry = false;
+
+  toggleEnquiry() {
+    this.showEnquiry = !this.showEnquiry;
+  }
+
+  openWhatsApp() {
+    window.open('https://wa.me/+60162907662', '_blank');
+  }
+
+  get displayedAmenities(): string[] {
+    return this.showAll ? this.amenities : this.amenities.slice(0, 4);
+  }
+
+  toggleAmenities() {
+    this.showAll = !this.showAll;
   }
 
 }
