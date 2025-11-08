@@ -242,7 +242,7 @@ html, body {
 /* === Responsive === */
 @media (max-width: 768px) {
   :host {
-    min-width: 400px; /* ✅ Prevents mobile shrink */
+    min-width: 300px; /* ✅ Prevents mobile shrink */
     overflow-x: hidden;
     display: block;
   }
