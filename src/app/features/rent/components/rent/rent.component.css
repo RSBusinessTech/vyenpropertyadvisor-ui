@@ -241,6 +241,19 @@ html, body {
 
 /* === Responsive === */
 @media (max-width: 768px) {
+    html, body {
+    width: 100%;
+    min-width: 360px; /* ✅ Prevents page from becoming too narrow */
+    overflow-x: hidden;
+  }
+
+  /* Hero section fix */
+  .rent-hero {
+    height: 70vh;
+    min-height: 420px; /* ✅ ensures visible height on zoom out */
+    background-position: center;
+    background-size: cover;
+  }
   .rent-hero-text h1 {
     font-size: 2rem;
   }
