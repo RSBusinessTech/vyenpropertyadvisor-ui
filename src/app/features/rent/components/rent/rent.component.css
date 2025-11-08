@@ -241,8 +241,9 @@ html, body {
 
 /* === Responsive === */
 @media (max-width: 768px) {
-  :host {
-    min-width: 300px; /* ✅ Prevents mobile shrink */
+html, body, :host {
+    width: 100%;
+    min-width: 320px; /* ✅ same as Buy page */
     overflow-x: hidden;
     display: block;
   }
@@ -252,13 +253,7 @@ html, body {
   .why-rent,
   .cta-section {
     width: 100%;
-    min-width: 400px;
-    overflow-x: hidden;
-  }
-    html, body {
-    width: 100%;
-    min-width: 360px; /* ✅ Prevents page from becoming too narrow */
-    overflow-x: hidden;
+    overflow-x: hidden; /* ✅ remove section-level min-widths */
   }
 
   /* Hero section fix */
