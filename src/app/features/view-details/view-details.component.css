@@ -161,7 +161,7 @@ html, body {
 
   .main-image img {
     width: 100% !important;  /* force fit */
-    height: auto !important; /* scale height */
+    height: 250px !important; /* scale height */
     max-width: 100vw !important;
     border-radius: 10px;
   }
