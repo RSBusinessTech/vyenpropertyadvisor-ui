@@ -249,7 +249,7 @@ html, body, :host {
   .featured-rentals,
   .why-rent,
   .cta-section {
-    width: 100%;
+    /* width: 100%; */
     overflow-x: hidden; /* ✅ remove section-level min-widths */
   }
 
