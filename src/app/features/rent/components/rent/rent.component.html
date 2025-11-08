@@ -4,7 +4,7 @@
   <div class="rent-hero-text">
     <!-- <h1>Find Your Perfect Rental Home</h1> -->
      <h1>
-      <span>Find</span>
+      <span> Find</span>
       <span> Your</span>
       <span> Perfect</span>
       <span> Rental</span>
@@ -27,15 +27,27 @@
 
 <!-- ✅ Featured Rentals -->
 <section class="featured-rentals">
-  <h2>Popular Rentals in Kuala Lumpur</h2>
+  <h2>Available Rentals in Kuala Lumpur</h2>
   <div class="rent-grid">
     <div class="rent-card" *ngFor="let item of [1,2,3,4,5,6]">
       <!-- <img src="assets/images/property{{item}}.png" alt="Property {{item}}" /> -->
       <img src="assets/images/property1.png" loading="lazy" alt="Property {{item}}" />
       <div class="rent-card-info">
         <h3>Luxury Condo {{item}}</h3>
-        <p>RM {{item*2500}} / month · 2 Bedrooms · KLCC</p>
-        <button class="details-btn">View Details</button>
+        <p>
+          <B>RM 2500 &nbsp;&nbsp;</B>
+          🛏️ 2 &nbsp;&nbsp;
+          🛁 2 &nbsp;&nbsp;
+          🚘 1 &nbsp;&nbsp;
+          <small>• Fully Furnished</small>
+          <!-- 📍 KLCC -->
+        </p>
+        <div class="rent-card-actions">
+         <button class="details-btn">View Details &nbsp;&nbsp;</button>
+           <a href="https://wa.me/+60162907662" target="_blank" aria-label="WhatsApp" class="whatsapp-btn">
+             <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
+          </a>
+       </div>
       </div>
     </div>
   </div>
