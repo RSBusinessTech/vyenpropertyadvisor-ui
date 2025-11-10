@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-view-details',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location:Location) { }
 
   images: string[] = [
     'assets/images/buy-hero.webp',
@@ -22,7 +23,6 @@ export class ViewDetailsComponent implements OnInit {
   selectedImage: string;
     showAll = false;
     showAllCommonFacilities = false;
-
 
   property = {
     name: 'Axis Crown @ Axis Pandan',
@@ -61,6 +61,7 @@ export class ViewDetailsComponent implements OnInit {
     '24-hour security'
   ];
 
+
   ngOnInit() {
     this.selectedImage = this.images[0];
   }
@@ -98,4 +99,13 @@ export class ViewDetailsComponent implements OnInit {
     this.showAllCommonFacilities = !this.showAllCommonFacilities;
   }
 
+  // Google Map Embed URL (moved from HTML)
+  mapUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15930.970407806825!2d101.68405868809338!3d3.1390036499999967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc37d111111111%3A0x7a0b1d362bc3a0!2sKuala%20Lumpur%2C%20Federal%20Territory%20of%20Kuala%20Lumpur%2C%20Malaysia!5e0!3m2!1sen!2smy!4v1661430783654!5m2!1sen!2smy';
+
+
+
+  //CTA
+  goBack(): void {
+    this.location.back();
+  }
 }

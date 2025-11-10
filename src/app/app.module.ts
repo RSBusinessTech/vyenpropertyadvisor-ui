@@ -7,6 +7,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './features/home/home.component';
 import { ViewDetailsComponent } from './features/view-details/view-details.component';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ViewDetailsComponent } from './features/view-details/view-details.compo
     FooterComponent,
     HomeComponent,
     ViewDetailsComponent,
+    SafeUrlPipe, // ✅ add this
   ],
   imports: [
     BrowserModule,
