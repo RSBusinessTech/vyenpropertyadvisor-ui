@@ -21,6 +21,7 @@ export class ViewDetailsComponent implements OnInit {
 
   selectedImage: string;
     showAll = false;
+    showAllCommonFacilities = false;
 
 
   property = {
@@ -51,6 +52,15 @@ export class ViewDetailsComponent implements OnInit {
     '24-hour security'
   ];
 
+    commonFacilities: string[] = [
+    'Gym',
+    'Balcony',
+    'Covered car parking',
+    'TV unit',
+    'High-speed WiFi',
+    '24-hour security'
+  ];
+
   ngOnInit() {
     this.selectedImage = this.images[0];
   }
@@ -69,12 +79,23 @@ export class ViewDetailsComponent implements OnInit {
     window.open('https://wa.me/+60162907662', '_blank');
   }
 
+  // Amenities
   get displayedAmenities(): string[] {
     return this.showAll ? this.amenities : this.amenities.slice(0, 4);
   }
 
   toggleAmenities() {
     this.showAll = !this.showAll;
+  }
+
+
+  //Common Facilities
+   get displayedCommonFacilities(): string[] {
+    return this.showAllCommonFacilities ? this.commonFacilities : this.commonFacilities.slice(0, 4);
+  }
+
+    toggleCommonFacilities() {
+    this.showAllCommonFacilities = !this.showAllCommonFacilities;
   }
 
 }

@@ -439,4 +439,104 @@ html, body {
   }
 }
 
+/* === Featured Rentals === */
+.featured-rentals {
+  padding: 70px 8%;
+  text-align: center;
+  background: #fffdf5;
+  min-height: 400px; /* ✅ ensures stable layout */
+}
+
+.rent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.rent-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.rent-card:hover {
+  transform: translateY(-5px);
+}
+.rent-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.rent-card-info {
+  padding: 15px;
+  text-align: left;
+}
+.details-btn {
+  background: #b8860b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.details-btn:hover {
+  background: #9e760b;
+}
+
+/* === View Details + WhatsApp Buttons === */
+.rent-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* View Details button */
+.details-btn {
+  background: #b8860b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.details-btn:hover {
+  background: #9e760b;
+}
+
+/* WhatsApp icon button (clean, no green box background) */
+.rent-card-actions .whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none; /* ✅ remove green box */
+  border: none;
+  width: auto;
+  height: auto;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.rent-card-actions .whatsapp-btn img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* ensures round icon */
+  transition: transform 0.3s ease;
+}
+
+.rent-card-actions .whatsapp-btn:hover img {
+  transform: scale(1.1);
+}
+
+
+
+
+
 
