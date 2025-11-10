@@ -174,9 +174,16 @@
     <iframe class="google-map"  [src]="mapUrl | safeUrl" 
     referrerpolicy="no-referrer-when-downgrade"
     loading="lazy"
-    width="100%" height="300"></iframe>
+    width="100%" height="300"></iframe> <br> <br>
+
+    <!-- CTA SECTION -->
+     <section class="cta-realestate">
+       <a class="btn-primary" (click)="goBack()">← Go Back</a>
+     </section>
   </div>
 </div>
+
+
 
 
 <!-- More similar Properties-->
@@ -206,10 +213,5 @@
       </div>
     </div>
   </div> <br><br>
-
-  <!-- CTA SECTION -->
-     <section class="cta-realestate">
-       <a class="btn-primary" (click)="goBack()">← Go Back</a>
-     </section>
 </section>
 
