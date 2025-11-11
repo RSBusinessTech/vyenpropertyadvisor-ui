@@ -1,6 +1,6 @@
-<section class="property-details-container">
 
-  <!-- Section 1: Image Gallery -->
+<section class="property-details-container">
+  <!-- Image Gallery -->
   <section class="image-gallery">
     <div class="main-image">
       <img [src]="selectedImage" alt="Property Image" />
@@ -17,37 +17,28 @@
     </div>
   </section>
 
-  <!-- Section 2: Property Summary -->
+  <!-- Property Summary -->
   <section class="property-summary">
-    <h1 class="property-name">{{property.name}}</h1>
-    <p class="property-address">{{property.address}}</p>
-    <h2 class="property-price">RM {{property.price | number}} /month</h2>
+    <h1 class="property-name">{{ property.name }}</h1>
+    <p class="property-address">{{ property.address }}</p>
+    <h2 class="property-price">RM {{ property.price | number }} /month</h2>
 
     <div class="property-features">
-      <div class="feature">
-        <span class="feature-value">🛏️ {{property.beds}}</span>
-        <span class="feature-label">Bedrooms</span>
-      </div>
-      <div class="feature">
-        <span class="feature-value">🛁 {{property.baths}}</span>
-        <span class="feature-label">Bathrooms</span>
-      </div>
-      <div class="feature">
-        <span class="feature-value">🚘 {{property.carParks}}</span>
-        <span class="feature-label">Car Parkings</span>
-      </div>
-      <div class="feature">
-        <span class="feature-value">📐{{property.sqft}}</span>
-        <span class="feature-label">sq.ft.</span>
-      </div>
-      <div class="feature">
-        <span class="feature-value">🛋️ {{property.furnish}}</span>
-        <span class="feature-label">Furnished</span>
+      <div class="feature" *ngFor="let feature of [
+        { icon: '🛏️', value: property.beds, label: 'Bedrooms' },
+        { icon: '🛁', value: property.baths, label: 'Bathrooms' },
+        { icon: '🚘', value: property.carParks, label: 'Car Parkings' },
+        { icon: '📐', value: property.sqft, label: 'sq.ft.' },
+        { icon: '🛋️', value: property.furnish, label: 'Furnished' }
+      ]">
+        <span class="feature-value">{{ feature.icon }} {{ feature.value }}</span>
+        <span class="feature-label">{{ feature.label }}</span>
       </div>
     </div>
   </section>
 </section>
 
+<!-- Contact Card -->
 <div class="contact-card">
   <div class="profile-section">
     <img src="assets/images/vyen.webp" alt="Agent photo" class="profile-img" />
@@ -74,95 +65,72 @@
   </div>
 </div>
 
+<!-- Video Gallery -->
+<section class="video-gallery">
+  <h2 style="color: red;">See on YouTube</h2>
+  <div class="video-grid">
+    <iframe
+      src="https://www.youtube.com/embed/xeYoAEYxffg"
+      title="Kuala Lumpur Stunning Skylines"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
 
- <!-- Video Gallery -->
-  <section class="video-gallery">
-    <h2 style="color: red;">See on YouTube</h2>
-    <div class="video-grid">
-        <iframe 
-        src="https://www.youtube.com/embed/xeYoAEYxffg" 
-        title="Kuala Lumpur Stunning Skylines" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-      
-      <iframe 
-        src="https://www.youtube.com/embed/EsHb3oqIfpE" 
-        title="Kuala Lumpur Drone Video 2024" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-      
-      <iframe 
-        src="https://www.youtube.com/embed/y7QaIz66Bjk" 
-        title="Downtown Kuala Lumpur Aerial Footage" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </section>  
+    <iframe
+      src="https://www.youtube.com/embed/EsHb3oqIfpE"
+      title="Kuala Lumpur Drone Video 2024"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
 
-  <!-- Amenities -->
-  <section class="amenities-section">
+    <iframe
+      src="https://www.youtube.com/embed/y7QaIz66Bjk"
+      title="Downtown Kuala Lumpur Aerial Footage"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- Amenities -->
+<section class="amenities-section">
   <h2 class="section-title">Amenities</h2>
 
   <div class="amenities-grid">
-    <div
-      *ngFor="let amenity of displayedAmenities"
-      class="amenity-card"
-    >
+    <div *ngFor="let amenity of displayedAmenities" class="amenity-card">
       <span class="check-icon">✔</span>
       <span class="amenity-name">{{ amenity }}</span>
     </div>
   </div>
 
-  <button
-    *ngIf="!showAll"
-    class="see-more-btn"
-    (click)="toggleAmenities()"
-  >
+  <button *ngIf="!showAll" class="see-more-btn" (click)="toggleAmenities()">
     See all {{ amenities.length }} amenities
   </button>
 
-  <button
-    *ngIf="showAll"
-    class="see-more-btn"
-    (click)="toggleAmenities()"
-  >
+  <button *ngIf="showAll" class="see-more-btn" (click)="toggleAmenities()">
     Show less
   </button>
 </section>
 
-  <!-- Common Facilities -->
-  <section class="amenities-section">
+<!-- Common Facilities -->
+<section class="amenities-section">
   <h2 class="section-title">Common Facilities</h2>
 
   <div class="amenities-grid">
-    <div
-      *ngFor="let commonFacility of displayedCommonFacilities"
-      class="amenity-card"
-    >
+    <div *ngFor="let commonFacility of displayedCommonFacilities" class="amenity-card">
       <span class="check-icon">✔</span>
       <span class="amenity-name">{{ commonFacility }}</span>
     </div>
   </div>
 
-  <button
-    *ngIf="!showAll"
-    class="see-more-btn"
-    (click)="toggleAmenities()"
-  >
+  <button *ngIf="!showAllCommonFacilities" class="see-more-btn" (click)="toggleCommonFacilities()">
     See all {{ commonFacilities.length }} common facilities
   </button>
 
-  <button
-    *ngIf="showAll"
-    class="see-more-btn"
-    (click)="toggleCommonFacilities()"
-  >
+  <button *ngIf="showAllCommonFacilities" class="see-more-btn" (click)="toggleCommonFacilities()">
     Show less
   </button>
 </section>
@@ -171,47 +139,57 @@
 <div class="content-section">
   <div class="content-container center-text">
     <h2 class="section-title">Location</h2>
-    <iframe class="google-map"  [src]="mapUrl | safeUrl" 
-    referrerpolicy="no-referrer-when-downgrade"
-    loading="lazy"
-    width="100%" height="300"></iframe> <br> <br>
 
-    <!-- CTA SECTION -->
-     <section class="cta-realestate">
-       <a class="btn-primary" (click)="goBack()">← Go Back</a>
-     </section>
+    <iframe
+      class="google-map"
+      [src]="mapUrl | safeUrl"
+      referrerpolicy="no-referrer-when-downgrade"
+      loading="lazy"
+      width="100%"
+      height="300">
+    </iframe>
+
+    <br><br>
+
+    <!-- Go Back CTA -->
+    <section class="cta-realestate">
+      <a class="btn-primary" (click)="goBack()">← Go Back</a>
+    </section>
   </div>
 </div>
 
-
-
-
-<!-- More similar Properties-->
+<!-- More Similar Properties -->
 <section class="featured-rentals">
-  <h1 class="marquee-heading" style="color: red">See more available similar properties</h1>
+  <h1 class="marquee-heading" style="color: red">
+    See more available similar properties
+  </h1>
+
   <div class="rent-grid">
-    <div class="rent-card" *ngFor="let item of [1,2,3,4,5,6]">
-      <img src="assets/images/property1.png" loading="lazy" alt="Property {{item}}" />
+    <div class="rent-card" *ngFor="let item of [1, 2, 3, 4, 5, 6]">
+      <img src="assets/images/property1.png" loading="lazy" alt="Property {{ item }}" />
+
       <div class="rent-card-info">
         <h3 style="color: rgb(158, 18, 18);">RM 2500/month</h3>
         <p>
-          <B>Axis Crown @ Axis Pandan</B><br>
-          <small>(Pandan Indah, Ampang)</small><br><br>
+          <strong>Axis Crown @ Axis Pandan</strong><br />
+          <small>(Pandan Indah, Ampang)</small><br /><br />
           <small>🛏️ 2 &nbsp;&nbsp;</small>
           <small>🛁 2 &nbsp;&nbsp;</small>
           <small>🚘 1 &nbsp;&nbsp;</small>
           <small>🛋️ Fully Furnished &nbsp;&nbsp;</small>
           <small>📐 750 sq.ft.</small>
-          <!-- 📍 KLCC -->
         </p>
+
         <div class="rent-card-actions">
-         <button class="details-btn" [routerLink]="['/viewDetails', 'rent', item]">View Details &nbsp;&nbsp;</button>
-           <a href="https://wa.me/+60162907662" target="_blank" aria-label="WhatsApp" class="whatsapp-btn">
-             <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
+          <button class="details-btn" [routerLink]="['/viewDetails', 'rent', item]">
+            View Details
+          </button>
+
+          <a href="https://wa.me/+60162907662" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
+            <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
           </a>
-       </div>
+        </div>
       </div>
     </div>
-  </div> <br><br>
+  </div>
 </section>
-

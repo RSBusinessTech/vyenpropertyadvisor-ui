@@ -76,7 +76,7 @@ html, body {
 }
 
 /* === Search Bar === */
-.rent-search {
+/* .rent-search {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -108,7 +108,7 @@ html, body {
 }
 .rent-search button:hover {
   background: #9e760b;
-}
+} */
 
 /* === Featured Rentals === */
 .featured-rentals {
@@ -206,6 +206,20 @@ html, body {
   margin-bottom: 10px;
 }
 
+/* === Marquee Heading Animation === */
+.marquee-heading {
+  display: inline-block;
+  white-space: nowrap;
+  color: red;
+  font-size: 2rem;
+  animation: slide-left 10s linear infinite;
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
 /* === CTA Section === */
 .cta-section {
   text-align: center;
@@ -293,18 +307,4 @@ html, body, :host {
     width: 26px;
     height: 26px;
   }
-}
-
-/* === Marquee Heading Animation === */
-.marquee-heading {
-  display: inline-block;
-  white-space: nowrap;
-  color: red;
-  font-size: 2rem;
-  animation: slide-left 10s linear infinite;
-}
-
-@keyframes slide-left {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
 }
