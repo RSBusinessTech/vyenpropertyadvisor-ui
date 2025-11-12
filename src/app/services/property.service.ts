@@ -9,8 +9,9 @@ import { Property } from '../model/property';
 export class PropertyService {
 
   //url of Rest-API to be called to fetch property.
-  // url = "https://rsbusinesstech-backend.onrender.com/contact/sendEmail";
-  private url = "http://127.0.0.1:8080/property/getPropertyByType";
+  url = "https://rsbusinesstech-backend.onrender.com/property/getPropertyByType";
+  // private url = "http://127.0.0.1:8080/property/getPropertyByType";
+  
 
   //dependency injection of HttpClient(Constrcutor DI).
   constructor(private httpClient: HttpClient) { }
