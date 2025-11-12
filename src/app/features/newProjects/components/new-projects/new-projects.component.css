@@ -188,6 +188,23 @@
   background: #9e760b;
 }
 
+.rent-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.whatsapp-btn img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover img {
+  transform: scale(1.1);
+}
+
 /* === Why Rent Section === */
 .why-rent {
   padding: 80px 10%;
@@ -302,5 +319,19 @@
 
 .cta-button:hover {
   background-color: #000;
+}
+
+/* === Marquee Heading Animation === */
+.marquee-heading {
+  display: inline-block;
+  white-space: nowrap;
+  color: red;
+  font-size: 2rem;
+  animation: slide-left 10s linear infinite;
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 

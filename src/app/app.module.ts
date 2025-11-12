@@ -8,6 +8,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './features/home/home.component';
 import { ViewDetailsComponent } from './features/view-details/view-details.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,  //HttpClient module.
   ],
   providers: [],
   bootstrap: [AppComponent]

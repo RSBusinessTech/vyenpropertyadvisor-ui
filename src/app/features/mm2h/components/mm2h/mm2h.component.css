@@ -162,6 +162,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.3s;
+  /* width: 300px; */
 }
 .rent-card:hover {
   transform: translateY(-5px);
@@ -438,6 +439,82 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* === Featured Rentals === */
+
+.rent-card {
+  position: relative; /* Needed so WhatsApp button can position inside it */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.rent-card:hover {
+  transform: translateY(-5px);
+}
+
+/* --- Actions area --- */
+.rent-card-actions {
+  display: flex;
+  justify-content: flex-start; /* Keep View Details on left */
+  align-items: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* View Details button */
+.details-btn {
+  background: #b8860b;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.details-btn:hover {
+  background: #9e760b;
+}
+
+/* --- WhatsApp floating button --- */
+.whatsapp-btn {
+  position: absolute;
+  bottom: 10px;   /* distance from bottom of the card */
+  right: 10px;    /* distance from right edge */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+}
+
+
+/* === Marquee Heading Animation === */
+.marquee-heading {
+  display: inline-block;
+  white-space: nowrap;
+  color: red;
+  font-size: 2rem;
+  animation: slide-left 10s linear infinite;
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 

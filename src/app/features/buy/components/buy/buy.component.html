@@ -20,21 +20,48 @@
   </div>
 </section>
 
-<!-- ✅ Featured Rentals -->
+<!-- Available Properties for Sale -->
 <section class="featured-rentals">
-  <h2>Available Properties for sale in Kuala Lumpur</h2>
+  <h1 class="marquee-heading" style="color: red">Available Properties for sale in Kuala Lumpur</h1>
+
   <div class="rent-grid">
-    <div class="rent-card" *ngFor="let item of [1,2,3,4,5,6]">
-      <!-- <img src="assets/images/property{{item}}.png" alt="Property {{item}}" /> -->
-      <img src="assets/images/property1.png" loading="lazy" alt="Property {{item}}" />
+    <div class="rent-card" *ngFor="let property of properties">
+      <!-- Show first image or fallback -->
+      <img [src]="property.imageUrl && property.imageUrl.length > 0 ? property.imageUrl[0] : 'assets/images/property1.png'"
+           loading="lazy" 
+           [alt]="property.name" />
+
       <div class="rent-card-info">
-        <h3>Luxury Condo {{item}}</h3>
-        <p>RM {{item*2500}} / month · 2 Bedrooms · KLCC</p>
-        <button class="details-btn">View Details</button>
+        <h3 style="color: rgb(158, 18, 18);">
+          RM {{ property.price | number }}
+        </h3>
+
+        <p>
+          <b>{{ property.name }}</b><br>
+          <small>{{ property.address }}</small><br><br>
+          <small>🛏️ {{ property.bedrooms || '-' }} &nbsp;&nbsp;</small>
+          <small>🛁 {{ property.bathrooms || '-' }} &nbsp;&nbsp;</small>
+          <small>🚘 {{ property.carParks || '-' }} &nbsp;&nbsp;</small>
+          <small>🛋️ {{ property.furnishing || 'N/A' }} &nbsp;&nbsp;</small>
+          <small>📐 {{ property.sizeSqft || '-' }} sq.ft.</small>
+        </p>
+
+        <div class="rent-card-actions">
+          <button class="details-btn" 
+                  [routerLink]="['/viewDetails', 'rent', property.id]">
+            View Details &nbsp;&nbsp;
+          </button>
+
+          <a href="https://wa.me/+60162907662" target="_blank" 
+             aria-label="WhatsApp" class="whatsapp-btn">
+            <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- ✅ Why Rent With Us -->
 <section class="why-rent">

@@ -123,6 +123,7 @@ html, body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 30px;
+  width: 350 px;
 }
 
 .rent-card {
