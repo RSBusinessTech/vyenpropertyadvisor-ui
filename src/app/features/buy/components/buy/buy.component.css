@@ -42,7 +42,7 @@
 
 .buy-hero-container {
   display: flex;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   gap: 50px;
   flex-wrap: wrap-reverse;
@@ -226,7 +226,6 @@
   padding: 80px 10%;
   text-align: center;
   background: linear-gradient(135deg, #f1f4f8, #d9e9f7);
-  min-height: 400px;
 }
 
 .why-rent h2 {
@@ -317,75 +316,151 @@
   100% { transform: translateX(-100%); }
 }
 
-/* === Responsive (Unified Rent-style Mobile Rules) === */
-@media (max-width: 768px) {
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
+/* === Responsive === */
 
-  .buy-hero,
-  .featured-rentals,
-  .why-rent,
-  .cta-section {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
+/* Small devices (phones, up to 480px) */
+@media (max-width: 480px) {
   .buy-hero {
-    height: 70vh;
-    min-height: 420px;
-    background-position: center;
-    background-size: cover;
-    padding: 0 8%;
+    min-height: 70vh;
+    padding: 40px 15px;
   }
 
   .buy-hero-container {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 25px;
-    width: 100%;
+    gap: 30px;
   }
 
   .buy-hero-text {
     text-align: center;
-    max-width: 700px;
+    flex: 1 1 100%;
+    min-width: auto;
   }
 
   .buy-hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .buy-hero-text p {
+    font-size: 1rem;
+  }
+
+  .buy-hero-image {
+    flex: 1 1 100%;
+    min-width: auto;
+    max-height: 300px;
+  }
+
+  .buy-hero-image img {
+    height: 100%;
+  }
+
+  .hero-cta {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .buy-hero {
+    min-height: 70vh;
+    padding: 40px 15px;
+  }
+
+  .buy-hero-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .buy-hero-text {
+    text-align: center;
+  }
+
+  .buy-hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .buy-hero-text p {
+    font-size: 1.05rem;
+  }
+
+  .buy-hero-image {
+    max-height: 350px;
+  }
+}
+
+/* Large devices (769px and up) */
+@media (min-width: 769px) {
+  .buy-hero-text h1 {
+    font-size: 2.8rem;
   }
 
   .buy-hero-text p {
     font-size: 1.1rem;
   }
 
-  .buy-hero-image {
-    width: 100%;
-    max-width: 400px;
+  .hero-cta {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+}
+
+/* Fixing Shrinking issue in Mobile view */
+/* === Mobile Stability Fix for Buy Page === */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
   }
 
+  /* Container padding & width */
+  .buy-hero-container {
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Hero heading smaller and better spacing */
+  .buy-hero-text h1 {
+    font-size: 2rem;
+  }
+
+  /* Hero paragraph smaller */
+  .buy-hero-text p {
+    font-size: 1rem;
+  }
+
+  /* Hero image width same as Rent page */
+  .buy-hero-image {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+
+  /* Featured Rentals and others full width and no overflow */
+  .featured-rentals,
+  .why-rent,
+  .cta-section {
+    width: 100%;
+    overflow-x: hidden;
+    min-height: 400px;
+  }
+
+  /* Grid adjusts to single column on mobile */
   .rent-grid {
     grid-template-columns: 1fr;
     justify-items: center;
   }
 
+  /* Cards width */
   .rent-card {
     width: 90%;
     max-width: 350px;
   }
 
-  .rent-card-actions {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
+  /* Smaller WhatsApp icon on mobile */
   .whatsapp-btn img {
     width: 26px;
     height: 26px;
