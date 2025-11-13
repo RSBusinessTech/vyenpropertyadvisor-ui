@@ -54,6 +54,13 @@
   .rent-hero-text h1 {
     font-size: 1.8rem;
   }
+   .rent-hero,
+  .featured-rentals,
+  .why-rent,
+  .cta-section {
+    /* width: 100%; */
+    overflow-x: hidden; /* ✅ remove section-level min-widths */
+  }
 }
 
 

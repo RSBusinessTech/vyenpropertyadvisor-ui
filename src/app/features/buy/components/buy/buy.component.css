@@ -406,63 +406,18 @@
   }
 }
 
-/* Fixing Shrinking issue in Mobile view */
-/* === Mobile Stability Fix for Buy Page === */
+/* === Responsive === */
 @media (max-width: 768px) {
-  /* Prevent horizontal scroll */
-  html, body {
+html, body, :host {
     overflow-x: hidden;
+    display: block;
   }
 
-  /* Container padding & width */
-  .buy-hero-container {
-    padding: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  /* Hero heading smaller and better spacing */
-  .buy-hero-text h1 {
-    font-size: 2rem;
-  }
-
-  /* Hero paragraph smaller */
-  .buy-hero-text p {
-    font-size: 1rem;
-  }
-
-  /* Hero image width same as Rent page */
-  .buy-hero-image {
-    width: 90%;
-    max-width: 350px;
-    margin: 0 auto;
-    border-radius: 10px;
-  }
-
-  /* Featured Rentals and others full width and no overflow */
+  .rent-hero,
   .featured-rentals,
   .why-rent,
   .cta-section {
-    width: 100%;
-    overflow-x: hidden;
-    min-height: 400px;
-  }
-
-  /* Grid adjusts to single column on mobile */
-  .rent-grid {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  /* Cards width */
-  .rent-card {
-    width: 90%;
-    max-width: 350px;
-  }
-
-  /* Smaller WhatsApp icon on mobile */
-  .whatsapp-btn img {
-    width: 26px;
-    height: 26px;
+    /* width: 100%; */
+    overflow-x: hidden; /* ✅ remove section-level min-widths */
   }
 }

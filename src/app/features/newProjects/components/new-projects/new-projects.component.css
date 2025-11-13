@@ -275,6 +275,14 @@
   .rent-search button {
     width: 90%;
   }
+
+  .rent-hero,
+  .featured-rentals,
+  .why-rent,
+  .cta-section {
+    /* width: 100%; */
+    overflow-x: hidden; /* ✅ remove section-level min-widths */
+  }
 }
 
 

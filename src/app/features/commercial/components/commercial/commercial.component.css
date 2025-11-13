@@ -10,53 +10,6 @@
   text-align: center;
 }
 
-.rent-hero-text {
-  text-align: center;
-  color: white;
-}
-
-.rent-hero-text h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.rent-hero-text h1 span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  margin-right: 10px; /* ✅ Adds space after each word */
-  animation: wordFade 0.6s ease-out forwards;
-}
-
-/* ✅ Animate words one by one */
-.rent-hero-text h1 span:nth-child(1) { animation-delay: 0s; }
-.rent-hero-text h1 span:nth-child(2) { animation-delay: 0.2s; }
-.rent-hero-text h1 span:nth-child(3) { animation-delay: 0.4s; }
-.rent-hero-text h1 span:nth-child(4) { animation-delay: 0.6s; }
-.rent-hero-text h1 span:nth-child(5) { animation-delay: 0.8s; }
-
-@keyframes wordFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ✅ Optional: responsive scaling */
-@media (max-width: 768px) {
-  .rent-hero-text h1 {
-    font-size: 1.8rem;
-  }
-}
-
-
 .rent-hero .overlay {
   position: absolute;
   inset: 0;
@@ -66,80 +19,141 @@
 .rent-hero-text {
   position: relative;
   z-index: 2;
-  max-width: 700px;
+  text-align: center;
+  max-width: 90%;
 }
 
 .rent-hero-text h1 {
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem); /* Fluid scaling */
+  font-weight: 700;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
+.rent-hero-text h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  margin-right: 10px;
+  animation: wordFade 0.6s ease-out forwards;
+}
+
+.rent-hero-text h1 span:nth-child(1) { animation-delay: 0s; }
+.rent-hero-text h1 span:nth-child(2) { animation-delay: 0.2s; }
+.rent-hero-text h1 span:nth-child(3) { animation-delay: 0.4s; }
+.rent-hero-text h1 span:nth-child(4) { animation-delay: 0.6s; }
+.rent-hero-text h1 span:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes wordFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .rent-hero-text p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   margin-bottom: 25px;
 }
 
-.rent-search {
-  display: flex;
+/* === Featured Rentals === */
+.featured-rentals {
+  padding: 70px 8%;
+  text-align: center;
+  background: #fffdf5;
+  min-height: 400px;
+}
+
+.rent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 25px;
+  margin-top: 30px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Ensure consistent box sizing */
-.rent-search input,
-.rent-search select,
-.rent-search button {
-  box-sizing: border-box;
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
+.rent-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
-/* Desktop view */
-.rent-search input,
-.rent-search select {
-  width: 230px;
+.rent-card:hover {
+  transform: translateY(-5px);
 }
 
-.rent-search button {
+.rent-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.rent-card-info {
+  padding: 15px;
+  text-align: left;
+}
+
+.rent-card-info h3 {
+  color: rgb(158, 18, 18);
+  margin-bottom: 5px;
+}
+
+.rent-card-info p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.rent-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.details-btn {
   background: #b8860b;
   color: white;
-  padding: 10px 25px;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 0.9rem;
 }
-.rent-search button:hover {
+
+.details-btn:hover {
   background: #9e760b;
 }
 
-/* ✅ Mobile view fix */
-@media (max-width: 768px) {
-  .rent-search {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
+.whatsapp-btn img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
 
-  .rent-search input,
-  .rent-search select,
-  .rent-search button {
-    width: 90%;
-    max-width: 400px;
-    padding: 12px;               /* uniform height */
-    border: none;
-  }
+.whatsapp-btn:hover img {
+  transform: scale(1.1);
+}
 
-  .rent-search input,
-  .rent-search select {
-    border: 1px solid #ccc;      /* optional: subtle border for clarity */
-  }
+/* === Marquee Heading === */
+.marquee-heading {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: clamp(1.8rem, 3vw, 2rem);
+  color: red;
+  animation: slide-left 10s linear infinite;
+}
 
-  .rent-search button {
-    background-color: #b8860b;
-    color: #fff;
-    border: none;
-  }
+@keyframes slide-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 /* === Why Rent Section === */
@@ -148,24 +162,29 @@
   text-align: center;
   background: linear-gradient(135deg, #f1f4f8, #d9e9f7);
 }
+
 .why-rent h2 {
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 4vw, 2rem);
   margin-bottom: 40px;
 }
+
 .why-rent span {
   color: #b8860b;
 }
+
 .reasons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
 }
+
 .reason {
   background: #fff;
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
+
 .reason .icon {
   font-size: 2.5rem;
   color: #b8860b;
@@ -173,73 +192,20 @@
 }
 
 /* === CTA Section === */
-.rent-cta {
-  background: #000;
-  color: white;
-  padding: 70px 10%;
-  text-align: center;
-}
-.rent-cta button {
-  background: #b8860b;
-  color: #fff;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-.rent-cta button:hover {
-  background: #9e760b;
-}
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .rent-hero-text h1 {
-    font-size: 2rem;
-  }
-  .rent-search {
-    flex-direction: column;
-    align-items: center;
-  }
-  .rent-search input,
-  .rent-search select,
-  .rent-search button {
-    width: 90%;
-  }
-}
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .rent-hero-text h1 {
-    font-size: 2rem;
-  }
-  .rent-search {
-    flex-direction: column;
-    align-items: center;
-  }
-  .rent-search input,
-  .rent-search select,
-  .rent-search button {
-    width: 90%;
-  }
-}
-
-/* CTA Section */
 .cta-section {
   text-align: center;
   background: #fffdf5;
   color: #000;
   padding: 40px 20px;
-  /* border-radius: 12px; */
 }
 
 .cta-section h2 {
-  font-size: 26px;
+  font-size: clamp(20px, 3vw, 26px);
   margin-bottom: 10px;
 }
 
 .cta-section p {
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 18px);
   margin-bottom: 20px;
 }
 
@@ -257,89 +223,27 @@
   background-color: #000;
 }
 
-/* === Featured Rentals === */
-.featured-rentals {
-  padding: 70px 8%;
-  text-align: center;
-  background: #fffdf5;
-  min-height: 400px; /* ✅ ensures stable layout */
-}
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .rent-hero-text h1 {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+  .rent-search {
+    flex-direction: column;
+    align-items: center;
+  }
+  .rent-search input,
+  .rent-search select,
+  .rent-search button {
+    width: 90%;
+    max-width: 400px;
+  }
 
-.rent-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust width here */
-  justify-content: center; /* Center grid items when there's space */
-  gap: 25px;
-  margin-top: 30px;
-  max-width: 1100px; /* Optional: prevents grid from spanning entire screen */
-  margin-left: auto;
-  margin-right: auto;
+   .rent-hero,
+  .featured-rentals,
+  .why-rent,
+  .cta-section {
+    /* width: 100%; */
+    overflow-x: hidden; /* ✅ remove section-level min-widths */
+  }
 }
-
-.rent-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.3s;
-  width: 100%;
-  max-width: 350px; /* Keeps fixed width look */
-  margin: 0 auto;
-}
-.rent-card:hover {
-  transform: translateY(-5px);
-}
-.rent-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.rent-card-info {
-  padding: 15px;
-  text-align: left;
-}
-.details-btn {
-  background: #b8860b;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-.details-btn:hover {
-  background: #9e760b;
-}
-
-/* Align View Details (left) and WhatsApp (right) */
-.rent-card-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.whatsapp-btn img {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-btn:hover img {
-  transform: scale(1.1);
-}
-
-/* === Marquee Heading Animation === */
-.marquee-heading {
-  display: inline-block;
-  white-space: nowrap;
-  color: red;
-  font-size: 2rem;
-  animation: slide-left 10s linear infinite;
-}
-
-@keyframes slide-left {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
