@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,10 @@ import { Title, Meta } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private title: Title, private meta: Meta) { }
+  constructor(private title: Title, private meta: Meta, private router: Router) { }
+
+  selectedOption: string = 'rent'; // default option
+  searchQuery: string = '';
 
   //Start: Enabling video to play automatically, by default it will be disabled by browser.
   @ViewChild('heroVideo', { static: false }) heroVideo!: ElementRef<HTMLVideoElement>;  
@@ -34,5 +38,28 @@ export class HomeComponent implements OnInit {
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'https://vyenproperty.com.my' },
     ]);
+  }
+
+  //Search button"
+     onSearch() {
+    switch (this.selectedOption) {
+      case 'rent':
+        this.router.navigate(['/rent']);
+        break;
+      case 'buy':
+        this.router.navigate(['/buy']);
+        break;
+      case 'commercial':
+        this.router.navigate(['/commercial']);
+        break;
+      case 'mm2h':
+        this.router.navigate(['/mm2h']);
+        break;
+      case 'newProjects':
+        this.router.navigate(['/newProjects']);
+        break;
+      default:
+        this.router.navigate(['/home']);
+    }
   }
 }

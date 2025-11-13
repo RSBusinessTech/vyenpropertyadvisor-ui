@@ -18,33 +18,19 @@
        <!-- <h1>This Website is under Development currently, Please contact via whatsapp directly as given bottom of this website</h1> -->
       <p>Buy · Rent · Sell — Trusted by Malaysians & Expats</p>
       <div class="search-bar">
-        <input placeholder="Search area or property" />
-        <select> 
-          <option>Rent (租)</option>
-          <option>Buy (买)</option>
-          <option>Commercial (商业)</option>
-          <option>MM2H (马来西亚我的第二家园计划)</option>
-          <option>New Projects (新项目)</option>
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Search area or property"/>
+        <select [(ngModel)]="selectedOption">
+           <option value="rent">Rent (租)</option>
+           <option value="buy">Buy (买)</option>
+           <option value="commercial">Commercial (商业)</option>
+           <option value="mm2h">MM2H (马来西亚我的第二家园计划)</option>
+           <option value="newProjects">New Projects (新项目)</option>
         </select>
-        <button>Search</button>
+        <button (click)="onSearch()">Search</button>
       </div>
     </div>
   </section>
-  
-  <!-- ✅ Featured Properties Carousel -->
-  <section class="featured">
-    <h2>Featured Properties in Kuala Lumpur</h2>
-    <div class="carousel">
-      <div class="card" *ngFor="let item of [1,2,3,4,5]">
-        <img src="assets/images/property1.png" alt="Property {{item}}">
-        <div class="card-content">
-          <h3>Luxury Condo {{item}}</h3>
-          <p>Located in the heart of KL City — from RM {{item*2000}}/month</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
+    
   <!-- ✅ Video Gallery -->
   <section class="video-gallery">
     <h2>Explore Our Properties on Video</h2>

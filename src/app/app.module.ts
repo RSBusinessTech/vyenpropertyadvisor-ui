@@ -9,6 +9,7 @@ import { HomeComponent } from './features/home/home.component';
 import { ViewDetailsComponent } from './features/view-details/view-details.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,  //HttpClient module.
+
   ],
   providers: [],
   bootstrap: [AppComponent]
