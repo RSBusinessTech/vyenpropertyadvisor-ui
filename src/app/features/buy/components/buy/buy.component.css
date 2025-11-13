@@ -7,6 +7,7 @@
   position: relative;
   overflow: hidden;
   padding: 0 20px;
+  min-height: 500px; /* Prevents collapse on zoom-out */
   /* remove direct background */
 }
 
@@ -312,7 +313,8 @@
 /* Small devices (phones, 320px and up) */
 @media (max-width: 480px) {
   .buy-hero {
-    height: auto; /* let height expand */
+    height: 70vh;
+    min-height: 420px;  /* ✅ same fix as rent */
     padding: 40px 15px;
   }
 
@@ -424,8 +426,9 @@
 /* Medium devices (tablets, 481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   .buy-hero {
-    height: auto;
-    padding: 50px 30px;
+    height: 70vh;
+    min-height: 420px;  /* ✅ same fix as rent */
+    padding: 40px 15px;
   }
 
   .buy-hero-container {
