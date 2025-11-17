@@ -30,4 +30,20 @@ export class NewProjectsComponent implements OnInit {
     );
   }
 
+  //Sharing property.
+  shareProperty(event: Event) {
+   event.preventDefault();
+  if ((navigator as any).share) {
+    (navigator as any).share({
+      title: 'Check out this property',
+      text: 'Check out this amazing property for rent!',
+      url: window.location.href
+    }).catch((error: any) => {
+      console.error('Error sharing:', error);
+    });
+  } else {
+    alert('Sharing not supported on this browser. You can copy the URL manually.');
+  }
+ }
+
 }

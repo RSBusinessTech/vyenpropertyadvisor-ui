@@ -55,13 +55,27 @@
         <div class="rent-card-actions">
           <button class="details-btn" 
                   [routerLink]="['/viewDetails', 'rent', property.id]">
-            View Details &nbsp;&nbsp;
+            View Details&nbsp;&nbsp;
           </button>
 
+           <!--Share-->
+           <a href="#" (click)="shareProperty($event)" target="_blank"
+             aria-label="WhatsApp" class="whatsapp-btn" title="Share">
+            <img src="assets/icons/share.png" alt="WhatsApp" />
+          </a>
+
+          <!--Call-->
+          <a href="tel:+60162907662" target="_blank" 
+             aria-label="WhatsApp" class="whatsapp-btn" title="Call">
+            <img src="assets/icons/phone.png" alt="WhatsApp" />
+          </a>
+
+          <!--Whatsapp-->
           <a href="https://wa.me/+60162907662" target="_blank" 
-             aria-label="WhatsApp" class="whatsapp-btn">
+             aria-label="WhatsApp" class="whatsapp-btn" title="Chat"> 
             <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
           </a>
+          
         </div>
       </div>
     </div>

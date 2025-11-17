@@ -221,6 +221,11 @@
   transform: scale(1.1);
 }
 
+.whatsapp-btn:hover {
+  background-color: #000;
+  transform: scale(1.1);
+}
+
 /* === Why Rent With Us Section === */
 .why-rent {
   padding: 80px 10%;

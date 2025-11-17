@@ -455,7 +455,6 @@
 }
 
 /* === Featured Rentals === */
-
 .rent-card {
   position: relative; /* Needed so WhatsApp button can position inside it */
   background: #fff;
@@ -475,6 +474,7 @@
   justify-content: flex-start; /* Keep View Details on left */
   align-items: center;
   margin-top: 10px;
+  gap: 30px; /* Add horizontal space between buttons */
   position: relative;
 }
 
@@ -495,7 +495,7 @@
 
 /* --- WhatsApp floating button --- */
 .whatsapp-btn {
-  position: absolute;
+  /* position: absolute; */
   bottom: 10px;   /* distance from bottom of the card */
   right: 10px;    /* distance from right edge */
   display: inline-flex;
@@ -511,7 +511,7 @@
 }
 
 .whatsapp-btn:hover {
-  background-color: #1ebe5d;
+  background-color: #000;
   transform: scale(1.1);
 }
 

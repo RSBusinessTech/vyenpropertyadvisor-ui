@@ -149,6 +149,11 @@
   transform: scale(1.1);
 }
 
+.whatsapp-btn:hover {
+  background-color: #000;
+  transform: scale(1.1);
+}
+
 /* === Marquee Heading === */
 .marquee-heading {
   display: inline-block;
