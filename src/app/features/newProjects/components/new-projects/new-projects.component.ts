@@ -19,7 +19,7 @@ export class NewProjectsComponent implements OnInit {
 
   ngOnInit() {
     //calling loadProperties() for type 'rent'.
-    this.loadProperties('newProject');
+    this.loadProperties('newProjects');
   }
 
   //method to call PropertyService to get properties.
