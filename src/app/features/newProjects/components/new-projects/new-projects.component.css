@@ -10,6 +10,13 @@
   text-align: center;
 }
 
+/* Desktop only: 85vh */
+@media (min-width: 1024px) {
+  .rent-hero {
+    height: 85vh;
+  }
+}
+
 .rent-hero-text {
   text-align: center;
   color: white;
