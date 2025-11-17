@@ -25,11 +25,11 @@
 
     <div class="property-features">
       <div class="feature" *ngFor="let feature of [
-        { icon: '🛏️', value: property.beds, label: 'Bedrooms' },
-        { icon: '🛁', value: property.baths, label: 'Bathrooms' },
+        { icon: '🛏️', value: property.bedrooms, label: 'Bedrooms' },
+        { icon: '🛁', value: property.bathrooms, label: 'Bathrooms' },
         { icon: '🚘', value: property.carParks, label: 'Car Parkings' },
-        { icon: '📐', value: property.sqft, label: 'sq.ft.' },
-        { icon: '🛋️', value: property.furnish, label: 'Furnished' }
+        { icon: '📐', value: property.sizeSqft, label: 'sq.ft.' },
+        { icon: '🛋️', value: property.furnishing, label: 'Furniture' }
       ]">
         <span class="feature-value">{{ feature.icon }} {{ feature.value }}</span>
         <span class="feature-label">{{ feature.label }}</span>
@@ -159,37 +159,58 @@
 </div>
 
 <!-- More Similar Properties -->
-<section class="featured-rentals">
+<section class="featured-rentals" *ngIf="similar.length > 0">
   <h1 class="marquee-heading" style="color: red">
     See more available similar properties
   </h1>
 
   <div class="rent-grid">
-    <div class="rent-card" *ngFor="let item of [1, 2, 3, 4, 5, 6]">
-      <img src="assets/images/property1.png" loading="lazy" alt="Property {{ item }}" />
+    <div class="rent-card" *ngFor="let item of similar">
+
+      <!-- Real property image -->
+      <img
+        [src]="item.imageUrls?.length ? item.imageUrls[0] : 'assets/images/property1.png'"
+        loading="lazy"
+        [alt]="item.name"
+      />
 
       <div class="rent-card-info">
-        <h3 style="color: rgb(158, 18, 18);">RM 2500/month</h3>
+        <h3 style="color: rgb(158, 18, 18);">
+          RM {{ item.price | number }}/month
+        </h3>
+
         <p>
-          <strong>Axis Crown @ Axis Pandan</strong><br />
-          <small>(Pandan Indah, Ampang)</small><br /><br />
-          <small>🛏️ 2 &nbsp;&nbsp;</small>
-          <small>🛁 2 &nbsp;&nbsp;</small>
-          <small>🚘 1 &nbsp;&nbsp;</small>
-          <small>🛋️ Fully Furnished &nbsp;&nbsp;</small>
-          <small>📐 750 sq.ft.</small>
+          <strong>{{ item.name }}</strong><br />
+          <small>{{ item.address }}</small><br /><br />
+
+          <small>🛏️ {{ item.bedrooms }} &nbsp;&nbsp;</small>
+          <small>🛁 {{ item.bathrooms }} &nbsp;&nbsp;</small>
+          <small>🚘 {{ item.carParks }} &nbsp;&nbsp;</small>
+          <small>🛋️ {{ item.furnishing }} &nbsp;&nbsp;</small>
+          <small>📐 {{ item.sizeSqft }} sq.ft.</small>
         </p>
 
         <div class="rent-card-actions">
-          <button class="details-btn" [routerLink]="['/viewDetails', 'rent', item]">
+          <button
+            class="details-btn"
+            [routerLink]="['/viewDetails', type, item.id]"
+          >
             View Details
           </button>
 
-          <a href="https://wa.me/+60162907662" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
+          <a
+            href="https://wa.me/+60162907662"
+            target="_blank"
+            class="whatsapp-btn"
+            aria-label="WhatsApp"
+          >
             <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
           </a>
         </div>
+
       </div>
+
     </div>
   </div>
 </section>
+

@@ -8,7 +8,7 @@ export interface Property {
   carParks?: number;
   furnishing: string;
   sizeSqft: number;
-  imageUrl?: string[];
+  imageUrls?: string[];
   amenities?: string[];
   commonFacilities?: string[];
   location?: string;
