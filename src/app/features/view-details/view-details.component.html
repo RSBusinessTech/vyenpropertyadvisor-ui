@@ -154,6 +154,8 @@
     <!-- Go Back CTA -->
     <div class="cta-area">
       <button class="cta-button" (click)="goBack()">← Go Back</button>
+       <!-- Share Button -->
+      <button class="cta-button share-btn" (click)="shareProperty($event)">🔗 Share</button>
     </div>
   </div>
 </div>
@@ -198,14 +200,24 @@
             View Details
           </button>
 
-          <a
-            href="https://wa.me/+60162907662"
-            target="_blank"
-            class="whatsapp-btn"
-            aria-label="WhatsApp"
-          >
+          <!--Share-->
+           <a href="#" (click)="shareProperty($event)" target="_blank"
+             aria-label="WhatsApp" class="whatsapp-btn" title="Share">
+            <img src="assets/icons/share.png" alt="WhatsApp" />
+          </a>
+
+          <!--Call-->
+          <a href="tel:+60162907662" target="_blank" 
+             aria-label="WhatsApp" class="whatsapp-btn" title="Call">
+            <img src="assets/icons/phone.png" alt="WhatsApp" />
+          </a>
+
+          <!--Whatsapp-->
+          <a href="https://wa.me/+60162907662" target="_blank" 
+             aria-label="WhatsApp" class="whatsapp-btn" title="Chat"> 
             <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
           </a>
+          
         </div>
 
       </div>

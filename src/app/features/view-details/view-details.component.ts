@@ -132,4 +132,46 @@ preparePropertyData(list: Property[]) {
   goBack(): void {
     this.location.back();
   }
+
+//   //Sharing property.
+//   shareProperty(event: Event) {
+//    event.preventDefault();
+//   if ((navigator as any).share) {
+//     (navigator as any).share({
+//       title: 'Check out this property',
+//       text: 'Check out this amazing property for rent!',
+//       url: window.location.href
+//     }).catch((error: any) => {
+//       console.error('Error sharing:', error);
+//     });
+//   } else {
+//     alert('Sharing not supported on this browser. You can copy the URL manually.');
+//   }
+//  }
+
+ // Universal Share button
+shareProperty(event: Event) {
+  event.preventDefault();
+
+  const title = (this.property && this.property.name)
+    ? this.property.name
+    : 'Property Listing';
+
+  const shareData = {
+    title: title,
+    text: 'Check out this amazing property!',
+    url: window.location.href
+  };
+
+  if ((navigator as any).share) {
+    (navigator as any).share(shareData).catch((error: any) => {
+      console.error('Share failed:', error);
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Sharing not supported on this browser. Link copied!');
+  }
 }
+
+}
+
