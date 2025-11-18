@@ -581,7 +581,8 @@ html, body {
 } */
 
 .cta-button {
-  background: linear-gradient(135deg, #416570, #7ac1e2);
+  /* background: linear-gradient(135deg, #416570, #7ac1e2); */
+  background: red;
   color: white;
   padding: 12px 28px;
   border-radius: 8px;
@@ -594,7 +595,7 @@ html, body {
 }
 
 .cta-button:hover {
-  background: black;
+  background: #000;
   color: white;
 }
 
@@ -605,11 +606,11 @@ html, body {
 }
 
 .share-btn {
-  background-color: #0d6efd;
+  background: green;
   color: white;
 }
 
 .share-btn:hover {
-  background-color: #0a58ca;
+  background-color: #000;
 }
 
