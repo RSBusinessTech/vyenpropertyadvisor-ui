@@ -173,10 +173,11 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.3s;
-   width: 100%;
+  width: 100%;
   max-width: 350px; /* Keeps fixed width look */
   margin: 0 auto;
 }
+
 .rent-card:hover {
   transform: translateY(-5px);
 }
@@ -188,6 +189,47 @@
 .rent-card-info {
   padding: 15px;
   text-align: left;
+}
+.details-btn {
+  background: #b8860b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.details-btn:hover {
+  background: #9e760b;
+}
+
+/* Align View Details (left) and WhatsApp (right) */
+.rent-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.details-btn {
+  background: #b8860b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.details-btn:hover {
+  background: #9e760b;
+}
+
+/* Align View Details (left) and WhatsApp (right) */
+.rent-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
 /* === Why Rent Section === */
@@ -443,43 +485,6 @@
 }
 
 /* === Featured Rentals === */
-.rent-card {
-  position: relative; /* Needed so WhatsApp button can position inside it */
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.rent-card:hover {
-  transform: translateY(-5px);
-}
-
-/* --- Actions area --- */
-.rent-card-actions {
-  display: flex;
-  justify-content: flex-start; /* Keep View Details on left */
-  align-items: center;
-  margin-top: 10px;
-  gap: 30px; /* Add horizontal space between buttons */
-  position: relative;
-}
-
-/* View Details button */
-.details-btn {
-  background: #b8860b;
-  color: white;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.details-btn:hover {
-  background: #9e760b;
-}
 
 /* --- WhatsApp floating button --- */
 .whatsapp-btn {

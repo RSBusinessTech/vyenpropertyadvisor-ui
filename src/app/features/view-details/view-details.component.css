@@ -575,13 +575,7 @@ html, body {
 }
 
 /* -------------------- CTA SECTION -------------------- */
-/* .cta-area {
-  margin-top: 40px;
-  text-align: center;
-} */
-
 .cta-button {
-  /* background: linear-gradient(135deg, #416570, #7ac1e2); */
   background: red;
   color: white;
   padding: 12px 28px;
@@ -603,6 +597,7 @@ html, body {
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex-wrap: nowrap;   /* ❗ force same line */
 }
 
 .share-btn {
@@ -612,5 +607,16 @@ html, body {
 
 .share-btn:hover {
   background-color: #000;
+}
+
+@media (max-width: 480px) {
+  .cta-button {
+    padding: 10px 18px;   /* make buttons slimmer for mobile */
+    font-size: 14px;
+  }
+
+  .cta-area {
+    gap: 10px;
+  }
 }
 
