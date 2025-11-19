@@ -102,7 +102,7 @@ export class Mm2hComponent implements OnInit {
         heightLeft -= pageHeight;
       }
 
-      pdf.save('MM2H_Table.pdf');
+      pdf.save('VyenProperty-MM2H-Comparison.pdf');
     });
   }, 100);
  }
