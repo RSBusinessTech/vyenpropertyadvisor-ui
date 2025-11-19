@@ -93,7 +93,7 @@ body { background-color: #fffdf7; color: #333; }
 /* === Why Choose Us (Enhanced) === */
 .why-us {
     background: linear-gradient(135deg, #f0efee, #b3d1ec);
-    padding: 80px 10%;
+    padding: 50px 10%;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -230,4 +230,234 @@ body { background-color: #fffdf7; color: #333; }
     background-color: #c1900f;
   }
 }
+
+/* === Property Categories ===*/
+.property-categories-section {
+  padding: 70px 10%;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: rgb(231, 230, 156);
+  margin-bottom: 30px;
+}
+
+/* Categories Grid */
+.category-grid,
+.neighborhood-grid,
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Cards */
+.category-card,
+.neighborhood-card,
+.listing-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+.category-card:hover,
+.neighborhood-card:hover,
+.listing-card:hover:hover {
+  transform: translateY(-6px);
+}
+
+/* Listing images placeholder */
+.listing-card .image {
+  width: 100%;
+  height: 130px;
+  background: #bdd3c1;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* CTA Section */
+.cta-section {
+  background: #fffdf1;
+  color: #000;
+  padding: 60px 10%;
+}
+.cta-btn {
+  display: inline-block;
+  background: green;
+  color: white;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-top: 15px;
+  text-decoration: none;
+}
+.cta-btn:hover {
+  background: #000;
+  color: white;
+}
+
+.category-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: block;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  color: #b8860b;
+}
+
+/* Mobile Optimisation */
+@media (max-width: 768px) {
+  .category-grid,
+  .neighborhood-grid,
+  .listings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === About Vyen Section === */
+.about-vyen {
+  padding: 80px 10%;
+  background: #fefcf6; /* light background for contrast */
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+
+.about-vyen h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  /* color: #b8860b; gold accent color matching your theme */
+  margin-bottom: 20px;
+}
+
+.about-vyen p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* Optional subtle underline for SEO-friendly heading */
+.about-vyen h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #b8860b;
+  margin: 15px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* === Responsive Design === */
+@media (max-width: 1024px) {
+  .about-vyen {
+    padding: 60px 8%;
+  }
+  .about-vyen p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-vyen {
+    padding: 50px 5%;
+  }
+  .about-vyen p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-vyen {
+    padding: 40px 5%;
+  }
+  .about-vyen p {
+    font-size: 0.9rem;
+  }
+}
+
+/* === Testimonials Section === */
+.testimonials-section {
+  padding: 70px 10%;
+  background: #000;
+  text-align: center;
+}
+
+.testimonials-section .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: rgb(180, 222, 230);
+}
+
+.testimonials-section .section-title span {
+  color: #b8860b;
+}
+
+.testimonials-section .section-subtitle {
+  font-size: 1rem;
+  color: rgb(180, 222, 230);
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b8860b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
 
