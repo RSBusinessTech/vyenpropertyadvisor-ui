@@ -21,7 +21,7 @@
   <section class="property-summary">
     <h1 class="property-name">{{ property.name }}</h1>
     <p class="property-address">{{ property.address }}</p>
-    <h2 class="property-price">RM {{ property.price | number }} /month</h2>
+    <h2 class="property-price">{{ property.price == 0 ? 'Freehold' : ('RM ' + (property.price | number)) }}</h2>
 
     <div class="property-features">
       <div class="feature" *ngFor="let feature of [
