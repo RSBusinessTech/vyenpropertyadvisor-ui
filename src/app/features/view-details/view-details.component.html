@@ -21,7 +21,7 @@
   <section class="property-summary">
     <h1 class="property-name">{{ property.name }}</h1>
     <p class="property-address">{{ property.address }}</p>
-    <h2 class="property-price">{{ property.price == 0 ? 'Freehold' : ('RM ' + (property.price | number)) }}</h2>
+    <h2 class="property-price">{{ property.price == 0 ? 'Freehold' : ('RM ' + (property.price | number)) }}<span *ngIf="type === 'rent' && property.price > 0">/month</span></h2>
 
     <div class="property-features">
       <div class="feature" *ngFor="let feature of [
@@ -178,7 +178,7 @@
 
       <div class="rent-card-info">
         <h3 style="color: rgb(158, 18, 18);">
-          RM {{ item.price | number }}/month
+          {{ item.price == 0 ? 'Freehold' : ('RM ' + (item.price | number)) }}<span *ngIf="type === 'rent' && item.price > 0">/month</span>
         </h3>
 
         <p>
