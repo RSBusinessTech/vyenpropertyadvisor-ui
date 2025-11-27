@@ -70,7 +70,7 @@
   <h2 style="color: red;">See on YouTube</h2>
   <div class="video-grid">
     <iframe
-      src="https://www.youtube.com/embed/xeYoAEYxffg"
+      [src]="property?.videoURL | safeUrl"
       title="Property Video"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
