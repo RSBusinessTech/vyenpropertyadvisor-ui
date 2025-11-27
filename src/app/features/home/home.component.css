@@ -400,7 +400,8 @@ body { background-color: #fffdf7; color: #333; }
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: rgb(180, 222, 230);
+  /* color: rgb(180, 222, 230); */
+  color: rgb(238, 255, 0)
 }
 
 .testimonials-section .section-title span {
@@ -409,7 +410,8 @@ body { background-color: #fffdf7; color: #333; }
 
 .testimonials-section .section-subtitle {
   font-size: 1rem;
-  color: rgb(180, 222, 230);
+  /* color: rgb(180, 222, 230); */
+  color: rgb(231, 230, 156);
   margin-bottom: 40px;
 }
 
