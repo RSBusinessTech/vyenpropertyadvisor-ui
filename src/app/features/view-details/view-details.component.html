@@ -65,35 +65,20 @@
   </div>
 </div>
 
-<!-- Video Gallery -->
-<section class="video-gallery">
+<!-- Video Gallery (show only if videoURL exists) -->
+<section class="video-gallery" *ngIf="property?.videoURL">
   <h2 style="color: red;">See on YouTube</h2>
   <div class="video-grid">
     <iframe
       src="https://www.youtube.com/embed/xeYoAEYxffg"
-      title="Kuala Lumpur Stunning Skylines"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-
-    <iframe
-      src="https://www.youtube.com/embed/EsHb3oqIfpE"
-      title="Kuala Lumpur Drone Video 2024"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-
-    <iframe
-      src="https://www.youtube.com/embed/y7QaIz66Bjk"
-      title="Downtown Kuala Lumpur Aerial Footage"
+      title="Property Video"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
   </div>
 </section>
+
 
 <!-- Amenities -->
 <section class="amenities-section">

@@ -48,6 +48,7 @@ export class ViewDetailsComponent implements OnInit {
   amenities: string[] = [];
   commonFacilities: string[] = [];
   mapUrl = '';
+  videoURL = '';
 
   showEnquiry = false;
 
@@ -86,6 +87,8 @@ preparePropertyData(list: Property[]) {
   this.amenities = this.property.amenities || [];
   this.commonFacilities = this.property.commonFacilities || [];
   this.mapUrl = this.property.location || '';
+
+  this.videoURL = this.property.videoURL || '';
 
   // Prepare similar properties (exclude current one)
   this.similar = list.filter(p => p.id !== this.property!.id).slice(0, 6);

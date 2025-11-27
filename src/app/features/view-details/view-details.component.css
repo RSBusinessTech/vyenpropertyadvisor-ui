@@ -205,23 +205,30 @@ html, body {
 }
 
 /* === Video Gallery === */
+/* Desktop: video gallery container is 50% width and centered */
 .video-gallery {
-  padding: 20px 10%;
+  padding: 20px 0;
   background: #fffdf1;
   text-align: center;
-  margin-top: 0px;
+  margin: 0 auto; /* center */
+  width: 100%;     /* 50% width on desktop */
+  box-sizing: border-box;
 }
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 30px;
 }
+/* Make iframe fill container width and keep aspect ratio */
 .video-grid iframe {
-  width: 100%;
-  height: 200px;
+  width: 50%;    /* fill 100% of parent container */
+  height: auto;
+  aspect-ratio: 16 / 9;  /* keeps 16:9 ratio */
   border-radius: 10px;
   border: none;
+  margin: 0 auto;      /* center horizontally */
 }
 
 .contact-card {
@@ -418,6 +425,14 @@ html, body {
 
   .amenity-name {
     font-size: 0.95rem;
+  }
+  .video-gallery {
+    width: 100%;      /* nearly full width */
+    padding: 20px 5%;
+  }
+  .video-grid iframe {
+    height: auto;    /* auto height to keep ratio */
+    width: 100%; 
   }
 }
 
