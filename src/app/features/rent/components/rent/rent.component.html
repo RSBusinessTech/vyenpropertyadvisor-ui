@@ -28,10 +28,20 @@
 
 <!-- Available Properties for Rental -->
 <section class="featured-rentals">
-  <h1 class="marquee-heading" style="color: red">Available Rentals in Kuala Lumpur</h1>
+
+  <!-- Show heading based on property count -->
+  <!-- Show heading based on property count -->
+  <h1 class="marquee-heading" style="color: red" *ngIf="properties?.length > 0">
+      Available Rentals in Kuala Lumpur.
+   </h1>
+
+   <h1 class="marquee-heading" style="color: red" *ngIf="!properties || properties.length === 0">
+     No Property Availablle || All Rented out || Please be in Touch.
+   </h1>
 
   <div class="rent-grid">
     <div class="rent-card" *ngFor="let property of properties">
+      <!-- <h1 class="marquee-heading" style="color: rgb(18, 55, 219)">Available Rentals in Kuala Lumpur</h1> -->
       <!-- Show first image or fallback -->
       <img [src]="property.imageUrls && property.imageUrls.length > 0 ? property.imageUrls[0] : 'assets/images/property1.png'"
            loading="lazy" 

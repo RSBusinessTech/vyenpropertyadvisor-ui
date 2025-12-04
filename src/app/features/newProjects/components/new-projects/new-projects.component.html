@@ -27,7 +27,13 @@
 
 <!-- Available Properties for Rental -->
 <section class="featured-rentals">
-  <h1 class="marquee-heading" style="color: red">New Projects in Kuala Lumpur</h1>
+   <h1 class="marquee-heading" style="color: red" *ngIf="properties?.length > 0">
+      New Projects in Kuala Lumpur
+   </h1>
+
+   <h1 class="marquee-heading" style="color: red" *ngIf="!properties || properties.length === 0">
+     No Property Availablle || Please be in Touch || We are uploading soon.
+   </h1>
 
   <div class="rent-grid">
     <div class="rent-card" *ngFor="let property of properties">
