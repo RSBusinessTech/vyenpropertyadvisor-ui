@@ -32,13 +32,13 @@
   <div class="rent-grid">
     <div class="rent-card" *ngFor="let property of properties">
       <!-- Show first image or fallback -->
-      <img [src]="property.imageUrl && property.imageUrl.length > 0 ? property.imageUrl[0] : 'assets/images/property1.png'"
+      <img [src]="property.imageUrls && property.imageUrls.length > 0 ? property.imageUrls[7] : 'assets/images/property1.png'"
            loading="lazy" 
            [alt]="property.name" />
 
       <div class="rent-card-info">
         <h3 style="color: rgb(158, 18, 18);">
-          RM {{ property.price | number }}
+          {{ property.price == 0 ? 'Freehold' : ('RM ' + (property.price | number)) }}
         </h3>
 
         <p>
