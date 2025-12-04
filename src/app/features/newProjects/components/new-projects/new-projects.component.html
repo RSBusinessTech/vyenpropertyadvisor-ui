@@ -32,7 +32,7 @@
   <div class="rent-grid">
     <div class="rent-card" *ngFor="let property of properties">
       <!-- Show first image or fallback -->
-      <img [src]="property.imageUrls && property.imageUrls.length > 0 ? property.imageUrls[7] : 'assets/images/property1.png'"
+      <img [src]="property.imageUrls && property.imageUrls.length > 0 ? property.imageUrls[0] : 'assets/images/property1.png'"
            loading="lazy" 
            [alt]="property.name" />
 
