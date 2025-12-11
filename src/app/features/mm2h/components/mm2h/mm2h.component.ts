@@ -11,8 +11,8 @@ import jsPDF from 'jspdf';
 })
 export class Mm2hComponent implements OnInit {
 
-   //declaring properties array.
-   properties: Property[] = [];
+   properties: Property[] = [];        // full list.
+   activeProperties: Property[] = [];  // filtered only if isActive = YES.
  
  
    //dependency injection of PropertyService(Constrcutor DI).n.
@@ -23,13 +23,20 @@ export class Mm2hComponent implements OnInit {
      this.loadProperties('mm2h');
    }
  
-   //method to call PropertyService to get properties.
-   loadProperties(type: string) {
-     this.propertyService.getPropertiesByType(type).subscribe(
-       data => this.properties = data,
-       error => console.error('Error fetching properties:', error)
-     );
-   }
+//method to call PropertyService to get properties.
+loadProperties(type: string) {
+  this.propertyService.getPropertiesByType(type).subscribe(
+    data => {
+      this.properties = data;
+
+      // Filter only active properties robustly
+      this.activeProperties = this.properties.filter(
+        p => p.isActive && p.isActive.trim().toUpperCase() === 'YES'
+      );
+    },
+    error => console.error('Error fetching properties:', error)
+  );
+}
 
   //Sharing property.
   shareProperty(event: Event) {

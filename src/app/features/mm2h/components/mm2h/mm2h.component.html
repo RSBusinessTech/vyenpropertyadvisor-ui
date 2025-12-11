@@ -287,16 +287,16 @@
 
 <!-- Available Properties for Rental -->
 <section class="featured-rentals">
-   <h1 class="marquee-heading" style="color: red" *ngIf="properties?.length > 0">
+   <h1 class="marquee-heading" style="color: red" *ngIf="activeProperties?.length > 0">
       Available MM2H properties in Kuala Lumpur
    </h1>
 
-   <h1 class="marquee-heading" style="color: red" *ngIf="!properties || properties.length === 0">
+   <h1 class="marquee-heading" style="color: red" *ngIf="!activeProperties || activeProperties.length === 0">
      No Property Availablle || Please be in Touch || We are uploading soon.
    </h1>
 
   <div class="rent-grid">
-    <div class="rent-card" *ngFor="let property of properties">
+    <div class="rent-card" *ngFor="let property of activeProperties">
       <!-- Show first image or fallback -->
       <img [src]="property.imageUrls && property.imageUrls.length > 0 ? property.imageUrls[0] : 'assets/images/property1.png'"
            loading="lazy" 

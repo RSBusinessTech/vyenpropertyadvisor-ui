@@ -321,3 +321,59 @@ html, body, :host {
     height: 26px;
   }
 }
+
+/* CENTER BADGE OVER IMAGE */
+.center-stock-badge {
+  position: absolute;
+  top: 25%;                
+  left: 50%;                  /* Center horizontally */
+  transform: translate(-50%, -50%);  /* Perfect centering */
+  background: rgba(192, 8, 8, 0.75);   
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 3;
+  width: 80%;
+}
+
+
+/* Make rent-card positioned container */
+.rent-card {
+  position: relative;
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  .center-stock-badge {
+  position: absolute;
+  top: 285;                   /* Move to center vertically */
+  left: 50%;                  /* Center horizontally */
+  transform: translate(-50%, -50%);  /* Perfect centering */
+  background: rgba(241, 34, 34, 0.849);       /* Dark transparent background */
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 3;
+  width: 80%;
+  }
+}
+
+.details-btn:disabled {
+  background-color: gray;
+  color: #fff;
+  cursor: not-allowed;   /* removes pointer */
+  opacity: 0.6;
+  pointer-events: none;  /* prevents any click/hover */
+}
+
+
+
+
