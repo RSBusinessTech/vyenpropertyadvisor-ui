@@ -161,6 +161,12 @@
         [alt]="item.name"
       />
 
+      <!-- Center Out-of-Stock / Rented Badge -->
+       <div class="center-stock-badge"
+         *ngIf="item.customerId && item.customerId != 0 && item.customerId != ''">
+          Rented Out
+       </div>  
+
       <div class="rent-card-info">
         <h3 style="color: rgb(158, 18, 18);">
           {{ item.price == 0 ? 'Freehold' : ('RM ' + (item.price | number)) }}<span *ngIf="type === 'rent' && item.price > 0">/month</span>
@@ -178,18 +184,11 @@
         </p>
 
         <div class="rent-card-actions">
-          <button
-            class="details-btn"
-            [routerLink]="['/viewDetails', type, item.id]"
-          >
-            View Details
-          </button>
-
-          <!--Share-->
-           <!-- <a href="#" (click)="shareProperty($event)" target="_blank"
-             aria-label="WhatsApp" class="whatsapp-btn" title="Share">
-            <img src="assets/icons/share.png" alt="WhatsApp" />
-          </a> -->
+          <button class="details-btn" 
+            [routerLink]="item.customerId && item.customerId != 0 && item.customerId != '' ? null : ['/viewDetails', 'rent', item.id]"
+            [disabled]="item.customerId && item.customerId != 0 && item.customerId != ''">
+            View Details&nbsp;&nbsp;
+           </button>
 
           <!--Call-->
           <a href="tel:+60162907662" target="_blank" 

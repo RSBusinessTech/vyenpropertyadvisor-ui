@@ -91,7 +91,7 @@ preparePropertyData(list: Property[]) {
   this.videoURL = this.property.videoURL || '';
 
   // Prepare similar properties (exclude current one)
-  this.similar = list.filter(p => p.id !== this.property!.id).slice(0, 6);
+  this.similar = list.filter(p => p.id !== this.property!.id);
 
   // Always set the image gallery (with fallback)
   this.images = (this.property.imageUrls && this.property.imageUrls.length > 0)
