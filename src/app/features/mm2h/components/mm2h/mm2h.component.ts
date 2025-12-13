@@ -20,7 +20,7 @@ export class Mm2hComponent implements OnInit {
  
    ngOnInit() {
      //calling loadProperties() for type 'rent'.
-     this.loadProperties('mm2h');
+     this.loadProperties('buy');
    }
  
 //method to call PropertyService to get properties.
