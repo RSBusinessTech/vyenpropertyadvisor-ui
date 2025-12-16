@@ -52,6 +52,52 @@ export class ViewDetailsComponent implements OnInit {
 
   showEnquiry = false;
 
+  currentIndex = 0;
+  touchStartX = 0;
+  touchEndX = 0;
+  showLightbox = false;
+
+  openLightbox() {
+  this.showLightbox = true;
+}
+
+closeLightbox() {
+  this.showLightbox = false;
+}
+
+  nextImage() {
+  if (!this.images.length) return;
+  this.currentIndex = (this.currentIndex + 1) % this.images.length;
+  this.selectedImage = this.images[this.currentIndex];
+}
+
+prevImage() {
+  if (!this.images.length) return;
+  this.currentIndex =
+    (this.currentIndex - 1 + this.images.length) % this.images.length;
+  this.selectedImage = this.images[this.currentIndex];
+}
+
+/* Touch support for mobile */
+onTouchStart(event: TouchEvent) {
+  this.touchStartX = event.changedTouches[0].screenX;
+}
+
+onTouchEnd(event: TouchEvent) {
+  this.touchEndX = event.changedTouches[0].screenX;
+  this.handleSwipe();
+}
+
+handleSwipe() {
+  const swipeDistance = this.touchEndX - this.touchStartX;
+
+  if (swipeDistance > 50) {
+    this.prevImage(); // swipe right
+  } else if (swipeDistance < -50) {
+    this.nextImage(); // swipe left
+  }
+}
+
   ngOnInit() {
   this.route.paramMap.subscribe(params => {
     //Extract type & id from route.
@@ -98,11 +144,13 @@ preparePropertyData(list: Property[]) {
     ? this.property.imageUrls
     : ['assets/images/buy-hero.webp'];
 
+  this.currentIndex = 0;  
   this.selectedImage = this.images[0];
 }
 
   selectImage(img: string) {
     this.selectedImage = img;
+    this.currentIndex = this.images.indexOf(img);
   }
 
   toggleEnquiry() {
@@ -158,7 +206,6 @@ shareProperty(event: Event) {
     navigator.clipboard.writeText(window.location.href);
     alert('Sharing not supported on this browser. Link copied!');
   }
-}
-
+ }
 }
 

@@ -1,21 +1,63 @@
-
 <section class="property-details-container">
-  <!-- Image Gallery -->
+  <!-- ================= IMAGE GALLERY ================= -->
   <section class="image-gallery">
-    <div class="main-image">
-      <img [src]="selectedImage" alt="Property Image" />
-    </div>
+    <div class="main-image"
+         (touchstart)="onTouchStart($event)"
+         (touchend)="onTouchEnd($event)">
+      <!-- Previous -->
+      <button class="nav-arrow left"
+              (click)="prevImage()"
+              *ngIf="images.length > 1">
+        ‹
+      </button>
+      <!-- MAIN IMAGE (CLICK TO OPEN FULLSCREEN) -->
+      <img
+        [src]="selectedImage"
+        alt="Property Image"
+        class="clickable-image"
+        (click)="openLightbox()" />
 
+      <!-- Next -->
+      <button class="nav-arrow right"
+              (click)="nextImage()"
+              *ngIf="images.length > 1">
+        ›
+      </button>
+    </div>
+    <!-- Thumbnails -->
     <div class="thumbnail-list">
       <img
         *ngFor="let img of images"
         [src]="img"
         (click)="selectImage(img)"
         [class.selected]="img === selectedImage"
-        alt="Thumbnail"
-      />
+        alt="Thumbnail" />
     </div>
   </section>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <!-- ================= FULLSCREEN LIGHTBOX WITH NAV ================= -->
+  <div class="lightbox" *ngIf="showLightbox" (click)="closeLightbox()">
+    <!-- Close -->
+    <span class="close-btn" (click)="closeLightbox()">×</span>
+    <!-- Previous -->
+    <button class="lightbox-arrow left"
+          (click)="prevImage(); $event.stopPropagation()"
+          *ngIf="images.length > 1">
+    ‹
+    </button>
+    <!-- Image -->
+    <img
+    class="lightbox-img"
+    [src]="selectedImage"
+    (click)="$event.stopPropagation()" />
+    <!-- Next -->
+    <button class="lightbox-arrow right"
+          (click)="nextImage(); $event.stopPropagation()"
+          *ngIf="images.length > 1">
+     ›
+    </button>
+  </div>
 
   <!-- Property Summary -->
   <section class="property-summary">
