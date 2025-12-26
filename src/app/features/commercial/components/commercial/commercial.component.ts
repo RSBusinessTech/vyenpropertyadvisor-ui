@@ -18,12 +18,12 @@ export class CommercialComponent implements OnInit {
   
     ngOnInit() {
       //calling loadProperties() for type 'rent'.
-      this.loadProperties('commercial');
+      this.loadProperties('commercial','vyenpropertyadvisor');
     }
  
 //method to call PropertyService to get properties.    
-loadProperties(type: string) {
-  this.propertyService.getPropertiesByType(type).subscribe(
+loadProperties(type: string, agentId: string) {
+  this.propertyService.getPropertiesByType(type,agentId).subscribe(
     data => {
       this.properties = data;
 

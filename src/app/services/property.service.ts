@@ -21,13 +21,13 @@ export class PropertyService {
   constructor(private httpClient: HttpClient) {}
 
   //fetching properties based upon type.
-  getPropertiesByType(type: string): Observable<Property[]> {
+  getPropertiesByType(type: string, agentId: string): Observable<Property[]> {
 
     if (this.propertyCache[type]) {
       return of(this.propertyCache[type]);
     }
 
-    const apiUrl = `${this.url}?type=${type}`;
+    const apiUrl = `${this.url}?type=${type}&agentId=${agentId}` ;
 
     return this.httpClient.get<Property[]>(apiUrl).pipe(
       tap((data) => {

@@ -18,12 +18,12 @@ export class BuyComponent implements OnInit {
 
   ngOnInit() {
     //calling loadProperties() for type 'rent'.
-    this.loadProperties('buy');
+    this.loadProperties('buy','vyenpropertyadvisor');
   }
 
 //method to call PropertyService to get properties.
-loadProperties(type: string) {
-  this.propertyService.getPropertiesByType(type).subscribe(
+loadProperties(type: string, agentId: string) {
+  this.propertyService.getPropertiesByType(type,agentId).subscribe(
     data => {
       this.properties = data;
 

@@ -111,7 +111,7 @@ handleSwipe() {
       this.preparePropertyData(cachedList);
     } else {
       //Fallback: fetch from backend only when required (refresh or direct link).
-      this.propertyService.getPropertiesByType(this.type).subscribe({
+      this.propertyService.getPropertiesByType(this.type,'vyenpropertyadvisor').subscribe({
         next: (data) => this.preparePropertyData(data),
         error: (err) => console.error('Error fetching properties:', err)
       });
