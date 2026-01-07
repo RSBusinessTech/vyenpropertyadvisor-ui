@@ -56,6 +56,10 @@
     .site-header .container .menu-toggle {
       display: block;
     }
+
+   .site-header .container .logo img {
+    height: 130px;
+  }
   
     .site-header .container .nav-links {
       display: none;
