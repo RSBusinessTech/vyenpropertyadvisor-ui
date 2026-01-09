@@ -32,8 +32,10 @@
   }
   
   .site-header .container .nav-links a {  
-    background-color: rgb(228, 241, 237);
-    color: black;             /* text color */
+    /* background-color: rgb(228, 241, 237);
+    color: black;      */
+    background-color:#1B4F9C;
+    color: #FFFFFF;         
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -46,7 +48,7 @@
   
   .site-header .container .nav-links a:hover,
   .site-header .container .nav-links a:focus {
-    background-color: #315F91;  /* box background */
+    background-color: #b8860b;  /* box background */
     color: white;
     outline: none;
     cursor: pointer;
