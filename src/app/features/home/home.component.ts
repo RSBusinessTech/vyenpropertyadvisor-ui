@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // ✅ SEO optimization
-    this.title.setTitle('Vyen Property | Real Estate in Kuala Lumpur | Buy, Rent, New Projects');
+    this.title.setTitle('Vyen Properties | Real Estate in Kuala Lumpur | Buy, Rent, New Projects');
     this.meta.addTags([
       { name: 'description', content: 'Find property for sale, rent or new projects in Kuala Lumpur and Malaysia. Explore apartments, condos and rooms with Vyen Property – trusted real estate experts.' },
       { name: 'keywords', content: 'real estate Malaysia, property Kuala Lumpur, rent apartment KL, buy condo KL, Vyen Property, Malaysian property, KL rooms, new property projects' },
